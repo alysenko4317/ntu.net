@@ -1,0 +1,43 @@
+﻿@model laba_3_1.Models.Employee
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create2</title>
+</head>
+<body>
+
+    <h4>Employee</h4>
+    <hr />
+    <div class="text-center">
+        <div class="row">
+            <div class="col-md-4">
+                @using (Html.BeginForm())
+                {
+                    @ViewBag.Greeting
+                    @Html.ValidationSummary()
+                    <p>Ваше имя: @Html.TextBoxFor(model => model.Name)</p>
+                    <p>
+                        Департамент
+                        @Html.DropDownListFor(model => model.DepartmentId, ViewBag.Departments as SelectList)
+                    </p>
+                    <input type="submit" value="Создать работника" />
+                }
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <p>@Html.ActionLink("Страница входа", "Entry")</p>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<laba_3_1.Models.Employee>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+
+<head>
+	<meta name="viewport" content="width=device-width" />
+
+    <title>Main</title>
+
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department)
+            </th>
+            <th>
+                    @Html.DisplayNameFor(model => model.DepartmentId)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.DepartmentId)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+    @using (Html.BeginForm())
+    {
+        @ViewBag.Greeting
+        <select name="query" id="query">
+            <option value="Order_by_DepName">Отсортировать по департаментам</option>
+            <option value="ALL_A">Фамилии всех сотрудников начинаются с А</option>
+            <option value="ANY_A">Saab</option>
+
+        </select>
+        <input type="submit" value="Применить" />
+
+    }
+
+</body>
+</html>
