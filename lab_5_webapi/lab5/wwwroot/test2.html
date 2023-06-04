@@ -1,0 +1,139 @@
+7.6.2 Пример вида, реализующего обращение к контроллеру ASP.NET Web API @{
+ViewBag.Title = "Графики";
+//интервал обновления - 3 сек.
+int refreshInterval = 3000;
+string refreshIntervalStr = refreshInterval.ToString();
+//uri для вызова Web API контроллера
+string uri = @"/api/serverrandom"; }
+
+<h2>Графики</h2>
+<div class="panel panel-primary">
+    <div class="panel-heading">График по 10 последним точкам</div>
+    <div class="panel-body">
+        <div id="div_graph_current" style="width:100%; height:333px;"></div>
+    </div>
+</div>
+
+<div class="panel panel-primary">
+<div class="panel-heading">График по всем точкам</div>
+<div class="panel-body">
+<div id="div_graph_total" style="width:100%; height:333px;"></div>
+</div>
+</div>
+<div class="panel panel-primary">
+<div class="panel-heading">График по всем точкам с прокруткой</div>
+<div class="panel-body">
+<div id="div_graph_total_roll" style="width:100%; height:333px;"></div>
+</div>
+</div>
+@section Scripts { @Scripts.Render("~/bundles/dygraph")
+<script type="text/javascript">
+
+// Преобразование даты-времени в тип Date из строки
+function ParseDateTime(dt)
+{
+    var year = dt.substring(0, 4);
+    var month = dt.substring(5, 7);
+    var day = dt.substring(8, 10);
+    var hour = dt.substring(11, 13);
+    var mnt = dt.substring(14, 16);
+    var sec = dt.substring(17, 19);
+    var Result = new Date(year, month-1, day, hour, mnt, sec, 0);
+    return Result;
+}
+
+// Признак первичного заполнения массива с накоплением
+var firstTotalFlag = false;
+
+// Данные с накоплением
+var dataTotal = [];
+
+// Текущие данные
+var dataCurrent = [];
+
+// Графики
+var g_current = new Dygraph(document.getElementById("div_graph_current"), dataCurrent,
+{
+    drawPoints: true,
+    valueRange: [0, 102],
+    labels: ['Время', 'Значение'], 'Значение': { fillGraph: true }
+});
+
+var g_total = new Dygraph(document.getElementById("div_graph_total"), dataTotal,
+{
+    drawPoints: true,
+    valueRange: [0, 102],
+    labels: ['Время', 'Значение'], 'Значение': { fillGraph: true }
+});
+
+var g_total_roll = new Dygraph(document.getElementById("div_graph_total_roll"), dataTotal,
+{
+    drawPoints: true,
+    valueRange: [0, 102],
+    labels: ['Время', 'Значение'], 'Значение': { fillGraph: true }, colors: ['#3333FF'],
+    showRangeSelector: true
+});
+
+// URL для доступа к Web API контроллеру
+var FullUri = "http://" + window.location.host + '@uri';
+
+// Функция setIntervalGraph вызывается после загрузки страницы
+$(document).bind("ready", setIntervalGraph);
+
+function setIntervalGraph()
+{
+    // Функция RefreshProgress вызывается через заданный интервал времени
+    RefreshGraph(); setTimeout(setIntervalGraph, @refreshIntervalStr );
+}
+
+function RefreshGraph()
+{
+    //Отправка Ajax-запроса о состоянии индикатора прогресса
+    $.ajax({
+        url: FullUri,
+	  
+        // функция вызывается после получения ответа на запрос
+        success: function (data) {
+            // data - массив данных, полученный с сервера
+
+            // Очистка массива текущих данных
+            dataCurrent.length = 0;
+		  
+            // Заполнение массива текущих данных
+            for (var i = 0; i < data.length; i++)
+            {
+                var element = data[i];
+                var x = ParseDateTime(element.x);
+                var y = element.y;
+                dataCurrent.push([x, y]);
+            }
+	  
+            if (! firstTotalFlag)
+            {
+                 // При первом получении данных в массив с накоплением добавляются все данные
+                 dataTotal.length = 0;
+                 for (var i = 0; i < data.length; i++)
+                 {
+                      var element = data[i];
+                      var x = ParseDateTime(element.x);
+                      var y = element.y;
+                      dataTotal.push([x, y]);
+                 }
+                 firstTotalFlag = true;
+            }
+            else
+            {
+                 // Добавление последнего элемента в массив с накоплением
+                 var lastElement = data[data.length - 1];
+                 var x = ParseDateTime(lastElement.x);
+                 var y = lastElement.y;
+                 dataTotal.push([x, y]);
+            }
+		  
+            // Изменение графиков при изменении массивов данных
+            g_current.updateOptions({ 'file': dataCurrent });
+            g_total.updateOptions({ 'file': dataTotal });
+            g_total_roll.updateOptions({ 'file': dataTotal });
+        }
+    });
+}
