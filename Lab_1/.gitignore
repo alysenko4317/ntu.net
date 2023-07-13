@@ -1,9 +1,13 @@
 .vs
 Menu_Sample/bin
 Menu_Sample/obj
+Menu_Sample/*.user
 Rand_Sample/bin
 Rand_Sample/obj
+Rand_Sample/*.user
 LINQ_Sample/bin
 LINQ_Sample/obj
+LINQ_Sample/*.user
 WinF_Sample/bin
 WinF_Sample/obj
+WinF_Sample/*.user
