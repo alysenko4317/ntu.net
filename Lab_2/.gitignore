@@ -1,0 +1,10 @@
+.vs
+PCALib/bin
+PCALib/obj
+PCALib/*.user
+PCALib_Tests/bin
+PCALib_Tests/obj
+PCALib_Tests/*.user
+Lab2_App/bin
+Lab2_App/obj
+Lab2_App/*.user
