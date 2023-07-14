@@ -8,3 +8,6 @@ PCALib_Tests/*.user
 Lab2_App/bin
 Lab2_App/obj
 Lab2_App/*.user
+PCALib_Graph/bin
+PCALib_Graph/obj
+PCALib_Graph/*.user
