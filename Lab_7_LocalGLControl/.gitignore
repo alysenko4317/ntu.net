@@ -1,0 +1,7 @@
+.vs
+GLGraph/bin
+GLGraph/obj
+GLGraph/*.user
+GLTest/bin
+GLTest/obj
+GLTest/*.user

@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="OpenTK.WinForms">
+      <HintPath>C:\Users\kasya\.nuget\packages\opentk.winforms\4.0.0-pre.6\lib\netcoreapp3.1\OpenTK.WinForms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
