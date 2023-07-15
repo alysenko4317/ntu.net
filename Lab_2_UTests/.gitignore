@@ -5,9 +5,9 @@ PCALib/*.user
 PCALib_Tests/bin
 PCALib_Tests/obj
 PCALib_Tests/*.user
-Lab2_App/bin
-Lab2_App/obj
-Lab2_App/*.user
+PCALib_Demo/bin
+PCALib_Demo/obj
+PCALib_Demo/*.user
 PCALib_Graph/bin
 PCALib_Graph/obj
 PCALib_Graph/*.user

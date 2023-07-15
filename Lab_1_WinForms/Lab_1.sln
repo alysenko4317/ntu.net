@@ -5,11 +5,9 @@ VisualStudioVersion = 16.0.33214.272
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Menu_Sample", "Menu_Sample\Menu_Sample.csproj", "{46DAB519-1ADF-4484-ABC6-8FD60BB48701}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LINQ_Sample", "LINQ_Sample\LINQ_Sample.csproj", "{D3F8177A-7DBD-46DC-9E26-576F15B86AD9}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rand_Sample", "Rand_Sample\Rand_Sample.csproj", "{4D783C75-900C-45DC-9CC1-F64B3B0877A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinF_Sample", "WinF_Sample\WinF_Sample.csproj", "{874430C7-2839-4E2B-883E-EDD430BCADD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinF_Sample", "WinF_Sample\WinF_Sample.csproj", "{874430C7-2839-4E2B-883E-EDD430BCADD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +19,6 @@ Global
 		{46DAB519-1ADF-4484-ABC6-8FD60BB48701}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46DAB519-1ADF-4484-ABC6-8FD60BB48701}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46DAB519-1ADF-4484-ABC6-8FD60BB48701}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D3F8177A-7DBD-46DC-9E26-576F15B86AD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D3F8177A-7DBD-46DC-9E26-576F15B86AD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D3F8177A-7DBD-46DC-9E26-576F15B86AD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D3F8177A-7DBD-46DC-9E26-576F15B86AD9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4D783C75-900C-45DC-9CC1-F64B3B0877A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4D783C75-900C-45DC-9CC1-F64B3B0877A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D783C75-900C-45DC-9CC1-F64B3B0877A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
