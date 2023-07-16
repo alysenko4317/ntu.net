@@ -12,12 +12,12 @@ namespace Lab2_App
 {
     public partial class MainForm : Form
     {
-        // Колонки таблицы
+        // Колонки таблиці
         private DataGridViewColumn dataGridViewColumn1 = null;
         private DataGridViewColumn dataGridViewColumn2 = null;
         private DataGridViewColumn dataGridViewColumn3 = null;
 
-        // Колекция List
+        // Колекція List
         private IList<Student> studentList = new List<Student>();
 
         public MainForm()
@@ -26,9 +26,9 @@ namespace Lab2_App
             initDataGridView();
         }
 
-        // Инициализация таблицы
-        private void initDataGridView()
+        private void initDataGridView()   
         {
+            // інициализация таблиці
             dataGridView1.DataSource = null;
             dataGridView1.Columns.Add(getDataGridViewColumn1());
             dataGridView1.Columns.Add(getDataGridViewColumn2());
@@ -36,52 +36,52 @@ namespace Lab2_App
             dataGridView1.AutoResizeColumns();
         }
 
-        // Динамическое создание первой колонки в таблице
         private DataGridViewColumn getDataGridViewColumn1()
         {
-            if (dataGridViewColumn1 == null)
-            {
+            // динамічне створення першої колонки у таблиці
+            if (dataGridViewColumn1 == null) {
                 dataGridViewColumn1 = new DataGridViewTextBoxColumn();
                 dataGridViewColumn1.Name = "";
                 dataGridViewColumn1.HeaderText = "Имя";
                 dataGridViewColumn1.ValueType = typeof(string);
                 dataGridViewColumn1.Width = dataGridView1.Width / 3;
             }
+
             return dataGridViewColumn1;
         }
 
-        // Динамическое создание второй колонки в таблице
         private DataGridViewColumn getDataGridViewColumn2()
         {
-            if (dataGridViewColumn2 == null)
-            {
+            // динамічне створення другої колонки у таблиці
+            if (dataGridViewColumn2 == null) {
                 dataGridViewColumn2 = new DataGridViewTextBoxColumn();
                 dataGridViewColumn2.Name = "";
                 dataGridViewColumn2.HeaderText = "Фамилия";
                 dataGridViewColumn2.ValueType = typeof(string);
                 dataGridViewColumn2.Width = dataGridView1.Width / 3;
             }
+
             return dataGridViewColumn2;
         }
 
-        // Динамическое создание третей колонки в таблице
         private DataGridViewColumn getDataGridViewColumn3()
         {
-            if (dataGridViewColumn3 == null)
-            {
+            // динамічне створення третьої колонки у таблиці
+            if (dataGridViewColumn3 == null) {
                 dataGridViewColumn3 = new DataGridViewTextBoxColumn();
                 dataGridViewColumn3.Name = "";
                 dataGridViewColumn3.HeaderText = "Зачетка";
                 dataGridViewColumn3.ValueType = typeof(string);
                 dataGridViewColumn3.Width = dataGridView1.Width / 3;
             }
+
             return dataGridViewColumn3;
         }
 
-        // Добавление студента в колекцию
-        private void addStudent(string name, string surname, string
-                                recordBookNumber)
+        
+        private void addStudent(string name, string surname, string recordBookNumber)
         {
+            // додавання студента до колекції
             Student s = new Student(name, surname, recordBookNumber);
             studentList.Add(s);
             textBox1.Text = "";
@@ -90,19 +90,18 @@ namespace Lab2_App
             showListInGrid();
         }
 
-        // Удаление студента с колекции
         private void deleteStudent(int elementIndex)
         {
+            // видалення студента з колекції
             studentList.RemoveAt(elementIndex);
             showListInGrid();
         }
 
-        // Отображение колекции в таблице
         private void showListInGrid()
         {
+            // відображення колекції у таблиці
             dataGridView1.Rows.Clear();
-            foreach (Student s in studentList)
-            {
+            foreach (Student s in studentList) {
                 DataGridViewRow row = new DataGridViewRow();
                 DataGridViewTextBoxCell cell1 = new
                 DataGridViewTextBoxCell();
@@ -123,29 +122,23 @@ namespace Lab2_App
             }
         }
 
-        // Обработчик нажатия на кнопку добавления
-        private void button1_Click(object sender, EventArgs e)
+        private void addStudentToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // обробник натискання на кнопку додавання
             addStudent(textBox1.Text, textBox2.Text, textBox3.Text);
         }
 
-        // Обработчик нажатия на удалить
-        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        private void deleteStudentToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // обробник натискання на видалити
             int selectedRow = dataGridView1.SelectedCells[0].RowIndex;
-            DialogResult dr = MessageBox.Show("Удалить студента?", "",
-            MessageBoxButtons.YesNo);
-            if (dr == DialogResult.Yes)
-            {
-                try
-                {
+            DialogResult dr = MessageBox.Show("Видалити студента?", "", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes) {
+                try {
                     deleteStudent(selectedRow);
                 }
-                catch (Exception)
-                {
-                }
+                catch (Exception) { }
             }
         }
-
     }
 }

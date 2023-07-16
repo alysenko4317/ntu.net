@@ -42,12 +42,15 @@ namespace Lab2_App
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.додатиСтудентаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.видалитиСтудентаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,8 +98,11 @@ namespace Lab2_App
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.додатиСтудентаToolStripMenuItem,
+            this.видалитиСтудентаToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(177, 48);
             // 
             // panel2
             // 
@@ -121,6 +127,7 @@ namespace Lab2_App
             this.buttonAddStudent.TabIndex = 6;
             this.buttonAddStudent.Text = "Додати";
             this.buttonAddStudent.UseVisualStyleBackColor = true;
+            this.buttonAddStudent.Click += new System.EventHandler(this.addStudentToolStripMenuItem_Click);
             // 
             // label3
             // 
@@ -170,6 +177,20 @@ namespace Lab2_App
             this.textBox1.Size = new System.Drawing.Size(199, 23);
             this.textBox1.TabIndex = 0;
             // 
+            // додатиСтудентаToolStripMenuItem
+            // 
+            this.додатиСтудентаToolStripMenuItem.Name = "додатиСтудентаToolStripMenuItem";
+            this.додатиСтудентаToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.додатиСтудентаToolStripMenuItem.Text = "Додати студента";
+            this.додатиСтудентаToolStripMenuItem.Click += new System.EventHandler(this.addStudentToolStripMenuItem_Click);
+            // 
+            // видалитиСтудентаToolStripMenuItem
+            // 
+            this.видалитиСтудентаToolStripMenuItem.Name = "видалитиСтудентаToolStripMenuItem";
+            this.видалитиСтудентаToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.видалитиСтудентаToolStripMenuItem.Text = "Видалити студента";
+            this.видалитиСтудентаToolStripMenuItem.Click += new System.EventHandler(this.deleteStudentToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -184,6 +205,7 @@ namespace Lab2_App
             this.splitContainer1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -204,6 +226,8 @@ namespace Lab2_App
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ToolStripMenuItem додатиСтудентаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem видалитиСтудентаToolStripMenuItem;
     }
 }
 

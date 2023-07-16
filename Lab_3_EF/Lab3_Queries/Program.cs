@@ -43,7 +43,7 @@ namespace EntityLINQ
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
-                @"Server=(localdb)\mssqllocaldb;Database=schooldb;Trusted_Connection=True;MultipleActiveResultSets=True");
+                @"Server=(localdb)\mssqllocaldb;Database=schooldb5;Trusted_Connection=True;MultipleActiveResultSets=True");
         }
     }
 
