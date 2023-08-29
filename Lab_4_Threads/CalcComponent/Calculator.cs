@@ -42,12 +42,14 @@ namespace CalcComponent
                 varResult *= varX;
                 // increments varTotalCalculations and keeps track of the current
                 // total as of this instant
-                _varTotalCalculations += 1;
-                varTotalAsOfNow = _varTotalCalculations;
+                lock (this)
+                {
+                    _varTotalCalculations += 1;
+                    varTotalAsOfNow = _varTotalCalculations;
+                }
             }
 
             Thread.Sleep(3000);
-
             // signals that the method has completed, and communicates the result
             // and a value of total calculations performed up to this point
             FactorialMinusOneComplete(varResult, varTotalAsOfNow);
@@ -70,8 +72,11 @@ namespace CalcComponent
             for (int varX = 1; varX <= _varFact1; varX++)
             {
                 varResult *= varX;
-                _varTotalCalculations += 1;
-                varTotalAsOfNow = _varTotalCalculations;
+                lock (this)
+                {
+                    _varTotalCalculations += 1;
+                    varTotalAsOfNow = _varTotalCalculations;
+                }
             }
 
             Thread.Sleep(3000);
@@ -92,8 +97,11 @@ namespace CalcComponent
 
             double varTotalAsOfNow = 0;
             int varResult = _varAddTwo + 2;
-            _varTotalCalculations += 1;
-            varTotalAsOfNow = _varTotalCalculations;
+            lock (this)
+            {
+                _varTotalCalculations += 1;
+                varTotalAsOfNow = _varTotalCalculations;
+            }
 
             Thread.Sleep(3000);
             AddTwoComplete(varResult, varTotalAsOfNow);
@@ -119,8 +127,11 @@ namespace CalcComponent
                 // the program and creating a processor-intensive application.
                 for (int varY = 1; varY <= 500; varY++)
                 {
-                    _varTotalCalculations += 1;
-                    varTotalAsOfNow = _varTotalCalculations;
+                    lock (this)
+                    {
+                        _varTotalCalculations += 1;
+                        varTotalAsOfNow = _varTotalCalculations;
+                    }
                 }
             }
 

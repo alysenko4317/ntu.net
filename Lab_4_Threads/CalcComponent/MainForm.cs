@@ -63,33 +63,66 @@ namespace CalcComponent
 
         private void FactorialHandler(double Value, double Calculations)
         {
-            // displays the returned value in the appropriate label
-            _labelFactorial1.Text = Value.ToString();
-            // re-enables the button so it can be used again
-            _buttonFactorial1.Enabled = true;
-            // updates the label that displays the total calculations performed
-            _labelTotalCalculations.Text = "Всього виконано обчислень: " + Calculations.ToString();
+            Action<double, double> handlerDelegate = (value, calculations) =>
+            {
+                // displays the returned value in the appropriate label
+                _labelFactorial1.Text = value.ToString();
+                // re-enables the button so it can be used again
+                _buttonFactorial1.Enabled = true;
+                // updates the label that displays the total calculations performed
+                _labelTotalCalculations.Text = "Всього виконано обчислень: " + calculations.ToString();
+            };
+
+            this.BeginInvoke(
+                handlerDelegate, new Object[] { Value, Calculations });
         }
 
         private void FactorialMinusHandler(double Value, double Calculations)
         {
-            _labelFactorial2.Text = Value.ToString();
-            _buttonFactorial2.Enabled = true;
-            _labelTotalCalculations.Text = "Всього виконано обчислень: " + Calculations.ToString();
+            Action<double, double> handlerDelegate = (value, calculations) =>
+            {
+                _labelFactorial2.Text = value.ToString();
+                _buttonFactorial2.Enabled = true;
+                _labelTotalCalculations.Text = "Всього виконано обчислень: " + calculations.ToString();
+            };
+
+            this.BeginInvoke(
+                handlerDelegate, new Object[] { Value, Calculations });
         }
 
         private void AddTwoHandler(int Value, double Calculations)
         {
-            _labelAddTwo.Text = Value.ToString();
-            _buttonAddTwo.Enabled = true;
-            _labelTotalCalculations.Text = "Всього виконано обчислень: " + Calculations.ToString();
+            Action<double, double> handlerDelegate = (value, calculations) =>
+            {
+                _labelAddTwo.Text = value.ToString();
+                _buttonAddTwo.Enabled = true;
+                _labelTotalCalculations.Text = "Всього виконано обчислень: " + calculations.ToString();
+            };
+
+            this.BeginInvoke(
+                handlerDelegate, new Object[] { Value, Calculations });
         }
 
         private void LoopDoneHandler(double Calculations, int Count)
         {
-            _buttonRunLoops.Enabled = true;
-            _labelRunLoops.Text = Count.ToString();
-            _labelTotalCalculations.Text = "Всього виконано обчислень:  " + Calculations.ToString();
+            Action<double, double> handlerDelegate = (calculations, count) =>
+            {
+                _buttonRunLoops.Enabled = true;
+                _labelRunLoops.Text = count.ToString();
+                _labelTotalCalculations.Text = "Всього виконано обчислень:  " + calculations.ToString();
+            };
+
+            lock (anObject)
+            {
+                // Insert code that affects the object.
+                // Insert more code that affects the object.
+                // Insert more code that affects the object.
+                // Release the lock.
+            }
+
+
+            this.BeginInvoke(
+                handlerDelegate, new Object[] { Calculations, Count });
         }
     }
 }
