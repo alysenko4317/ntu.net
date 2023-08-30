@@ -1,7 +1,17 @@
 .vs
+
 GLGraph/bin
 GLGraph/obj
 GLGraph/*.user
+
 GLTest/bin
 GLTest/obj
 GLTest/*.user
+
+CPULoad/bin
+CPULoad/obj
+CPULoad/*.user
+
+DiskPartitionDiagram/bin
+DiskPartitionDiagram/obj
+DiskPartitionDiagram/*.user

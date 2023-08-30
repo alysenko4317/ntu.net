@@ -1,5 +1,5 @@
 ﻿
-namespace GLGraph
+namespace DiskPartitionDiagram
 {
     partial class Form1
     {
@@ -31,7 +31,7 @@ namespace GLGraph
         {
             this.components = new System.ComponentModel.Container();
             this.AnT = new OpenTK.WinForms.GLControl();
-            this.PointInGraph = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // AnT
@@ -40,18 +40,16 @@ namespace GLGraph
             this.AnT.APIVersion = new System.Version(3, 3, 0, 0);
             this.AnT.Flags = OpenTK.Windowing.Common.ContextFlags.Default;
             this.AnT.IsEventDriven = true;
-            this.AnT.Location = new System.Drawing.Point(21, 12);
+            this.AnT.Location = new System.Drawing.Point(63, 12);
             this.AnT.Name = "AnT";
             this.AnT.Profile = OpenTK.Windowing.Common.ContextProfile.Compatability;
-            this.AnT.Size = new System.Drawing.Size(754, 426);
+            this.AnT.Size = new System.Drawing.Size(612, 404);
             this.AnT.TabIndex = 0;
-            this.AnT.Text = "glControl1";
-            this.AnT.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AnT_MouseMove);
+            this.AnT.Text = "AnT";
             // 
-            // PointInGraph
+            // timer1
             // 
-            this.PointInGraph.Interval = 30;
-            this.PointInGraph.Tick += new System.EventHandler(this.PointInGraph_Tick);
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -69,7 +67,7 @@ namespace GLGraph
         #endregion
 
         private OpenTK.WinForms.GLControl AnT;
-        private System.Windows.Forms.Timer PointInGraph;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
