@@ -14,13 +14,13 @@ class AccountEventArgs : EventArgs
 
 class Account
 {
-    public delegate void AccountStateHandler(object sender, AccountEventArgs e);
+    //public delegate void AccountStateHandler(object sender, AccountEventArgs e);
 
-    public event AccountStateHandler Withdrawn;
-    public event AccountStateHandler Added;
+    //public event AccountStateHandler Withdrawn;
+    //public event AccountStateHandler Added;
 
-    //public event EventHandler<AccountEventArgs> Withdrawn;
-    //public event EventHandler<AccountEventArgs> Added;
+    public event EventHandler<AccountEventArgs> Withdrawn;
+    public event EventHandler<AccountEventArgs> Added;
 
     private int _sum;
 

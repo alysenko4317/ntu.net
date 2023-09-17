@@ -15,12 +15,11 @@ namespace CalcApp
         private void button_digit_click(object sender, EventArgs e)
         {
             if (sender is Button)
-                textBox1.Text += (sender as Button).Text;
+                textBox1.Text += (sender as Button).Text; // (Button)sender
         }
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
-
         }
     }
 }
