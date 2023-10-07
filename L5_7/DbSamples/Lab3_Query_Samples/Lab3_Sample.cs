@@ -105,8 +105,8 @@ namespace EntityLINQ
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-                .UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=schooldb;Trusted_Connection=True;MultipleActiveResultSets=True")
-                .LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information);
+                .UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=schooldb;Trusted_Connection=True;MultipleActiveResultSets=True");
+              //  .LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information);
         }
 
         // If you need more specific configurations:
@@ -115,16 +115,6 @@ namespace EntityLINQ
         //    of your DbContext
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Example: Configuring the self-referencing relationship in SubjectType
-            modelBuilder.Entity<SubjectType>()
-                .HasOne(st => st.ParentSubjectType)
-                .WithMany(st => st.ChildSubjectTypes)
-                .HasForeignKey(st => st.ParentSubjectTypeId);
-                //.OnDelete(DeleteBehavior.Restrict);
-                   // or .OnDelete(DeleteBehavior.SetNull) if you want to set FK to NULL when parent is deleted
-
-            // this method can be commented in original sample (i.e. if you haven't done any significant
-            // changes in other code related to ORM functionality)
         }
     }
 
