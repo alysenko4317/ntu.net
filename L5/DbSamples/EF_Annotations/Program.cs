@@ -3,8 +3,9 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+//using Microsoft.EntityFrameworkCore.Proxies;
 
 // Add the necessary NuGet packages for EF Core and the PostgreSQL provider.
 //    Set up a DbContext class that represents the session with the database.
@@ -54,7 +55,7 @@ namespace PgsqlEFDemo
         // Navigation property
         public virtual ICollection<Car> Cars { get; set; }
     }
-
+    
     [Table("car", Schema="car_portal_app")]
     public class Car
     {
@@ -183,6 +184,15 @@ namespace PgsqlEFDemo
             _context = context;
             _loadOwnedCars = loadOwnedCars;
         }
+        /*
+        public List<Account> FetchAll()
+        {
+            var query = _context.Accounts.AsQueryable();
+
+            // No need for .Include, lazy loading will load related entities when accessed
+
+            return query.OrderBy(a => a.FirstName).ToList();
+        }*/
 
         public List<Account> FetchAll()
         {
@@ -194,6 +204,10 @@ namespace PgsqlEFDemo
                     .Include(a => a.Cars)
                     .ThenInclude(c => c.Model);
             }
+
+            var sql = query.ToQueryString();
+            Console.WriteLine("*** SQL: " + sql);
+            Console.WriteLine("---------");
 
             return query.OrderBy(a => a.FirstName).ToList();
         }
@@ -257,15 +271,22 @@ namespace PgsqlEFDemo
     {
         static void Main()
         {
-            // Setup Dependency Injection
+            // Initialize a new instance of ServiceCollection to set up Dependency Injection (DI).
             var services = new ServiceCollection()
+                // Add AppDbContext to the DI container. This context will be configured to use a PostgreSQL database.
+                // The 'UseNpgsql' method specifies the connection parameters for the database.
                 .AddDbContext<AppDbContext>(options =>
-                    options.UseNpgsql(
-                        "Host=localhost;Port=5433;Username=postgres;Password=1234;Database=car_portal")
+                    options.UseNpgsql("Host=localhost;Port=5433;Username=postgres;Password=1234;Database=car_portal")
+                           .LogTo(Console.WriteLine, LogLevel.Information)
+                       //    .UseLazyLoadingProxies()   // Enable lazy loading proxies
                     )
+                // Register the 'AccountRepository' as the implementation for 'IAccountDAO'. When a class requires an 
+                // IAccountDAO, the DI system will provide an instance of AccountRepository. 
+                // The 'AddTransient' means a new instance of AccountRepository will be created each time it's requested.
                 .AddTransient<IAccountDAO, AccountRepository>();
-                //.BuildServiceProvider();
 
+            // The 'BuildServiceProvider' method will compile the service registrations 
+            // and make it ready for DI to provide instances of the services as required.
             var serviceProvider = services.BuildServiceProvider();
 
             // List all the registered services
@@ -274,6 +295,8 @@ namespace PgsqlEFDemo
                 if (serviceDescriptor.ImplementationType != null)
                     Console.WriteLine($"\tImplementation: {serviceDescriptor.ImplementationType.FullName}");
             }
+
+            // ------------ DI container usage
 
             var accountRepo = serviceProvider.GetRequiredService<IAccountDAO>();
 

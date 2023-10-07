@@ -3,23 +3,41 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1_adoApp", "adoApp\1_adoApp.csproj", "{229538E9-6535-4247-8F27-2AB63BEEDA73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_1_adoMSSQL", "adoMSSQL\_1_adoMSSQL.csproj", "{229538E9-6535-4247-8F27-2AB63BEEDA73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_pgsqlApp", "pgsqlApp\3_pgsqlApp.csproj", "{6D4504DC-15E5-4024-90B3-B6DF27FC7A61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_3_adoPostgreSQL", "adoPostgreSQL\_3_adoPostgreSQL.csproj", "{6D4504DC-15E5-4024-90B3-B6DF27FC7A61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_pgsqlWithDAO", "pgsqlWithDAO\4_pgsqlWithDAO.csproj", "{5B1753EC-CD8D-4BC1-9E0F-97865EF21E71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_4_adoPostgreSQL_WithDAO_Simple", "adoPostgreSQL_WithDAO_Simple\_4_adoPostgreSQL_WithDAO_Simple.csproj", "{5B1753EC-CD8D-4BC1-9E0F-97865EF21E71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5_pgsqlWithDAO_Ex", "pgsqlWithDAO_Ex\5_pgsqlWithDAO_Ex.csproj", "{3FE5A7C1-F588-4901-980B-52362064EADC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_5_adoPostgreSQL_WithDAO_Complex", "adoPostgreSQL_WithDAO_Complex\_5_adoPostgreSQL_WithDAO_Complex.csproj", "{3FE5A7C1-F588-4901-980B-52362064EADC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6_EFMin_CodeFirst", "EFMin_CodeFirst\6_EFMin_CodeFirst.csproj", "{2BC45F6F-0626-4CF0-A0C2-D067E4D7214B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_6_EF_CodeFirst_SQLite", "EF_CodeFirst_SQLite\_6_EF_CodeFirst_SQLite.csproj", "{2BC45F6F-0626-4CF0-A0C2-D067E4D7214B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0_idisposable", "idisposable\0_idisposable.csproj", "{C7D16F5B-BF68-4479-866E-B19A842BC65C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_0_IDisposable", "IDisposable\_0_IDisposable.csproj", "{C7D16F5B-BF68-4479-866E-B19A842BC65C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2_adoAppNoUsing", "adoAppNoUsing\2_adoAppNoUsing.csproj", "{6F26A59F-2535-41E9-9C92-C91716823A92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_2_adoMSSQL_NoUsing", "adoMSSQL_NoUsing\_2_adoMSSQL_NoUsing.csproj", "{6F26A59F-2535-41E9-9C92-C91716823A92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFDemo_CodeFirst", "EFDemo_CodeFirst\EFDemo_CodeFirst.csproj", "{5B5B3A65-3686-4297-8456-75848B791A59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab3_Query_Samples", "Lab3_Query_Samples\Lab3_Query_Samples.csproj", "{5B5B3A65-3686-4297-8456-75848B791A59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFDemo_pgApp", "EFDemo_pgApp\EFDemo_pgApp.csproj", "{7564F248-8F7C-4186-8347-34D23C7133D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11_EF_Annotations", "EF_Annotations\11_EF_Annotations.csproj", "{7564F248-8F7C-4186-8347-34D23C7133D2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_8_EF_DatabaseFirst_PostgreSQL", "EF_DatabaseFirst_PostgreSQL\_8_EF_DatabaseFirst_PostgreSQL.csproj", "{3C1B9CA4-B27B-4A9B-A4F4-DCF26C90F15C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_9_EF_ConfigFile", "EF_ConfigFile\_9_EF_ConfigFile.csproj", "{3E3DF2A8-7C9C-46C7-985F-B420A7F826F1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10_EF_Migrations", "EF_Migrations\10_EF_Migrations.csproj", "{1725E6A2-B9A4-4183-BFDE-0BEDC7F9F230}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_7_EF_DatabaseFirst_MSSQL", "EF_DatabaseFirst_MSSQL\_7_EF_DatabaseFirst_MSSQL.csproj", "{68504169-9360-4984-83EB-7A3DFD07F95B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12_EF_FluentAPI_1", "EF_FluentAPI_1\12_EF_FluentAPI_1.csproj", "{8A97692E-D638-4134-A957-A59D8BEFDA69}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "13_EF_FluentAPI_2", "EF_FluentAPI_2\13_EF_FluentAPI_2.csproj", "{367423B5-9963-46EC-B9F7-941766E36FD0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "15_ExplicitLoad", "ExplicitLoad\15_ExplicitLoad.csproj", "{897D5635-1EBB-41C7-80ED-23E6232C7FA1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "16_EnumerableQueriable", "EnumerableQueriable\16_EnumerableQueriable.csproj", "{E1C611E6-A009-4BDC-BD4C-CB2E3F1165FC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "14_LazyEagerLoad", "LazyEagerLoad\14_LazyEagerLoad.csproj", "{03BAC8B4-AB61-4642-BC1D-EEB4F3C64724}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +81,42 @@ Global
 		{7564F248-8F7C-4186-8347-34D23C7133D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7564F248-8F7C-4186-8347-34D23C7133D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7564F248-8F7C-4186-8347-34D23C7133D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C1B9CA4-B27B-4A9B-A4F4-DCF26C90F15C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C1B9CA4-B27B-4A9B-A4F4-DCF26C90F15C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C1B9CA4-B27B-4A9B-A4F4-DCF26C90F15C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C1B9CA4-B27B-4A9B-A4F4-DCF26C90F15C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E3DF2A8-7C9C-46C7-985F-B420A7F826F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E3DF2A8-7C9C-46C7-985F-B420A7F826F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E3DF2A8-7C9C-46C7-985F-B420A7F826F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E3DF2A8-7C9C-46C7-985F-B420A7F826F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1725E6A2-B9A4-4183-BFDE-0BEDC7F9F230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1725E6A2-B9A4-4183-BFDE-0BEDC7F9F230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1725E6A2-B9A4-4183-BFDE-0BEDC7F9F230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1725E6A2-B9A4-4183-BFDE-0BEDC7F9F230}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68504169-9360-4984-83EB-7A3DFD07F95B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68504169-9360-4984-83EB-7A3DFD07F95B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68504169-9360-4984-83EB-7A3DFD07F95B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68504169-9360-4984-83EB-7A3DFD07F95B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A97692E-D638-4134-A957-A59D8BEFDA69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A97692E-D638-4134-A957-A59D8BEFDA69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A97692E-D638-4134-A957-A59D8BEFDA69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A97692E-D638-4134-A957-A59D8BEFDA69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{367423B5-9963-46EC-B9F7-941766E36FD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{367423B5-9963-46EC-B9F7-941766E36FD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{367423B5-9963-46EC-B9F7-941766E36FD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{367423B5-9963-46EC-B9F7-941766E36FD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{897D5635-1EBB-41C7-80ED-23E6232C7FA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{897D5635-1EBB-41C7-80ED-23E6232C7FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{897D5635-1EBB-41C7-80ED-23E6232C7FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{897D5635-1EBB-41C7-80ED-23E6232C7FA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1C611E6-A009-4BDC-BD4C-CB2E3F1165FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1C611E6-A009-4BDC-BD4C-CB2E3F1165FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1C611E6-A009-4BDC-BD4C-CB2E3F1165FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1C611E6-A009-4BDC-BD4C-CB2E3F1165FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03BAC8B4-AB61-4642-BC1D-EEB4F3C64724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03BAC8B4-AB61-4642-BC1D-EEB4F3C64724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03BAC8B4-AB61-4642-BC1D-EEB4F3C64724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03BAC8B4-AB61-4642-BC1D-EEB4F3C64724}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

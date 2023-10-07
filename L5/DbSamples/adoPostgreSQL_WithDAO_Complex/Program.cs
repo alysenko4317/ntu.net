@@ -63,7 +63,7 @@ namespace PgsqlAdoDemo
         public Account MapToAccount(IDataRecord record)
         {
             int id = (int)record["account_id"];
-            bool exists = _accounts.ContainsKey(id);
+            bool exists = false;// _accounts.ContainsKey(id);
 
             if (!exists)
             {

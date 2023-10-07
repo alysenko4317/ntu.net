@@ -1,13 +1,6 @@
 ﻿
-using System;
 using System.Data;
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.EntityFrameworkCore.Metadata;
-using System.Text.RegularExpressions;
 
 // install Microsoft.EntityFrameworkCore
 //         Microsoft.EntityFrameworkCore.SqlServer
@@ -111,7 +104,9 @@ namespace EntityLINQ
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=schooldb;Trusted_Connection=True;MultipleActiveResultSets=True");
+            optionsBuilder
+                .UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=schooldb;Trusted_Connection=True;MultipleActiveResultSets=True")
+                .LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information);
         }
 
         // If you need more specific configurations:
@@ -124,8 +119,8 @@ namespace EntityLINQ
             modelBuilder.Entity<SubjectType>()
                 .HasOne(st => st.ParentSubjectType)
                 .WithMany(st => st.ChildSubjectTypes)
-                .HasForeignKey(st => st.ParentSubjectTypeId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .HasForeignKey(st => st.ParentSubjectTypeId);
+                //.OnDelete(DeleteBehavior.Restrict);
                    // or .OnDelete(DeleteBehavior.SetNull) if you want to set FK to NULL when parent is deleted
 
             // this method can be commented in original sample (i.e. if you haven't done any significant

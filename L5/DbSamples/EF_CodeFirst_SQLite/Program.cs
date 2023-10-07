@@ -19,12 +19,24 @@ namespace sqlite_app
             public int Id { get; set; }  // or UserId
             public string? Name { get; set; }
             public int Age { get; set; }
+
         }
 
         public class MyDbContext : DbContext
         {
-            // Сущностями считаются базовые типы коллекций DbSet в классе контекста.
-            // Сущностями также считаются все типы, на которые ссылаются сущности, и это правило рекурсивно.
+            // Сутностями вважаються базові типи колекцій DbSet у контексті.
+            // Сутностями також є всі типи, куди посилаються сутності, і це правило рекурсивно.
+            //
+            // цій властивості присвоюється початкове значення - результат методу Set<User> у вигляді об'єкта DbSet<User>.
+            // Насправді в функціональному плані в цій ініціалізації мало сенсу, вона ніяк не спричинить роботу властивості,
+            // оскільки всі властивості контексту, які представляють об'єкт DbSet, ініціалізуються автоматично при створенні
+            // об'єкта контексту. Однак оскільки тип DbSet - тип посилань, явна ініціалізація властивостей типів посилань
+            // дозволяє нам обійти попередження статичного аналізу для даних типів посилань, які не ініціалізовані і при цьому
+            // не допускають значення null.
+            //
+            // Як альтернативу можна використовувати вираз null!
+            // In C#, the = null! assignment is a way to inform the compiler to suppress nullability warnings for a specific
+            // property or variable. It's a feature that comes with the nullable reference types introduced in C# 8.0.
 
             //public DbSet<User> Users { get; set; } = null!;  alternative init
             public DbSet<User> Users => Set<User>();
