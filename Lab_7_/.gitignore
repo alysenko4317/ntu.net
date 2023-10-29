@@ -1,0 +1,4 @@
+.vs
+GLMinApp/bin
+GLMinApp/obj/*
+GLMinApp/*.users
