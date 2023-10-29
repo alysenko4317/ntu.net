@@ -13,7 +13,7 @@ namespace OneThreadDemo
             textBox1.Text = "Started";
             decimal res = 0;
             for (long i = 0; i < 100000000; i++)
-                res += (decimal)Math.Sin(i);
+                res += (decimal) Math.Sin(i);
             textBox1.Text = "";
         }
 
@@ -51,12 +51,14 @@ namespace OneThreadDemo
                 // типизовані базовим класом Form
                 Form1 form1 = Application.OpenForms["Form1"] as Form1;
 
-                //form1.textBox1.Text = "Thread Finished!"; // will fire exception
+               // form1.textBox1.Text = "Thread Finished!"; // will fire exception
 
                 // Метод Invoke в C# використовується для виконання коду на потоці інтерфейсу користувача (UI thread)
                 // з іншого потока. У Win32 API, для досягнення подібної функціональності, ви можете використовувати
                 // функції PostMessage або SendMessage
-                form1.Invoke(new Action(() => { form1.textBox1.Text = $"Thread Finished with res={res.ToString()}"; }));  // так є правильно! 
+                form1.Invoke(new Action(() => {
+                    form1.textBox1.Text = $"Thread Finished with res={res.ToString()}";
+                }));  // так є правильно! 
             }
         }
 
@@ -98,9 +100,9 @@ namespace OneThreadDemo
                 for (long i = 0; i < 20000000; i++)
                     res += (decimal) Math.Sin(i);
 
-                this.Invoke(new Action(() =>
+                Invoke(new Action(() =>
                 {
-                    this.textBox1.Text = $"Thread Finished with res={res.ToString()}";
+                    textBox1.Text = $"Thread Finished with res={res.ToString()}";
                 }));
             });
 
@@ -122,8 +124,8 @@ namespace OneThreadDemo
                 for (long i = 0; i < iterations; i++)
                     res += (decimal)Math.Sin(i);
 
-                // Use BeginInvoke to update the UI from the background thread
-                this.BeginInvoke(new Action(() =>
+                // Use Invoke to update the UI from the background thread
+                this.Invoke(new Action(() =>
                 {
                     this.textBox1.Text = $"Thread Finished with res={res.ToString()}";
                 }));

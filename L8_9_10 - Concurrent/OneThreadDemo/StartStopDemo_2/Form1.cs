@@ -8,8 +8,8 @@ namespace StartStopDemo_2
     public partial class Form1 : Form
     {
         public Thread _workerThread;
-        public bool _isCancellationRequested = false;
-
+        public bool _isCancellationRequested = false;  // shared resource
+        
         public Form1()
         {
             InitializeComponent();

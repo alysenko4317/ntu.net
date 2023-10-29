@@ -27,8 +27,8 @@ namespace StopPauseDemo
 
         public void Start() {
             _thread = new Thread(Solve);
-            //_thread.IsBackground = true;
-            //_thread.Priority = ThreadPriority.Normal;
+            _thread.IsBackground = true;
+            _thread.Priority = ThreadPriority.Normal;
             _thread.Start();
         }
 
@@ -59,9 +59,9 @@ namespace StopPauseDemo
             _listener?.OnStatusChanged(Status.STARTED, "Thread started...");
 
             decimal res = 0;
-            for (long i = 0; i < 20000000; i++)
+            for (long i = 0; i < 200000000; i++)
             {
-                if ((i & 0xFFFF) == 0)  // щоб не викликати WaitOne занадто часто, будемо викликати кожну 65536-ю ітерацію
+                if ((i & 0xFFFFF) == 0)  // щоб не викликати WaitOne занадто часто, будемо викликати кожну 65536-ю ітерацію
                     _pauseEvent.WaitOne();
 
                 if (_isCancellationRequested) {

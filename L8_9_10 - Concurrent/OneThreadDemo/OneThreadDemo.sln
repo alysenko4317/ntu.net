@@ -3,15 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1_OneThreadDemo", "OneThreadDemo\1_OneThreadDemo.csproj", "{D594297E-AAC4-4B32-BCC6-3D820D8A2914}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1_OneThreadDemo", "OneThreadDemo\1_OneThreadDemo.csproj", "{D594297E-AAC4-4B32-BCC6-3D820D8A2914}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2_SecondThreadDemo", "SecondThreadDemo\2_SecondThreadDemo.csproj", "{300F0C7D-D83A-4B2C-80A6-CE5C1DDEC9E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2_SecondThreadDemo", "SecondThreadDemo\2_SecondThreadDemo.csproj", "{300F0C7D-D83A-4B2C-80A6-CE5C1DDEC9E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_StopPauseDemo_1", "StopPauseDemo\4_StopPauseDemo_1.csproj", "{EAFCA830-41FA-48A7-A750-42FCC4A02DAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4_StopPauseDemo_1", "StopPauseDemo\4_StopPauseDemo_1.csproj", "{EAFCA830-41FA-48A7-A750-42FCC4A02DAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_StartStopDemo_0", "StartStopDemo_2\3_StartStopDemo_0.csproj", "{65A3F6BD-C7A5-45CF-B345-0E74327B6BF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3_StartStopDemo_0", "StartStopDemo_2\3_StartStopDemo_0.csproj", "{65A3F6BD-C7A5-45CF-B345-0E74327B6BF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessList", "ProcessList\ProcessList.csproj", "{54AEBCB3-58FF-48DA-8D74-95068EBC1A58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessList", "ProcessList\ProcessList.csproj", "{54AEBCB3-58FF-48DA-8D74-95068EBC1A58}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "5_BackgroundWorker", "BackgroundWorker\5_BackgroundWorker.csproj", "{AE651751-9B9E-4ECC-A5C8-6388256BBFBE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "6_BackgroundWorker_Console", "BackgroundWorker_Console\6_BackgroundWorker_Console.csproj", "{8E2CAD77-E330-4D5E-983C-7A706CC2A2E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7_TaskDemo", "TaskDemo\7_TaskDemo.csproj", "{1CBF4AF3-8712-4DEA-A423-4FBBBB98B1D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +45,18 @@ Global
 		{54AEBCB3-58FF-48DA-8D74-95068EBC1A58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54AEBCB3-58FF-48DA-8D74-95068EBC1A58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54AEBCB3-58FF-48DA-8D74-95068EBC1A58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE651751-9B9E-4ECC-A5C8-6388256BBFBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE651751-9B9E-4ECC-A5C8-6388256BBFBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE651751-9B9E-4ECC-A5C8-6388256BBFBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE651751-9B9E-4ECC-A5C8-6388256BBFBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E2CAD77-E330-4D5E-983C-7A706CC2A2E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E2CAD77-E330-4D5E-983C-7A706CC2A2E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E2CAD77-E330-4D5E-983C-7A706CC2A2E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E2CAD77-E330-4D5E-983C-7A706CC2A2E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CBF4AF3-8712-4DEA-A423-4FBBBB98B1D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CBF4AF3-8712-4DEA-A423-4FBBBB98B1D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CBF4AF3-8712-4DEA-A423-4FBBBB98B1D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CBF4AF3-8712-4DEA-A423-4FBBBB98B1D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
