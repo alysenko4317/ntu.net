@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light p-5">
+
+    <div class="container">
+        <h2 class="mb-4">Выберить файлы для загантаження</h2>
+        <form action="upload" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="file" name="uploads" class="form-control-file mb-2">
+                <input type="file" name="uploads" class="form-control-file mb-2">
+                <input type="file" name="uploads" class="form-control-file mb-2">
+            </div>
+            <input type="submit" value="Завантажити" class="btn btn-primary">
+        </form>
+    </div>
+
+    <!-- Optional: Include Bootstrap JS and jQuery if you need JS components -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

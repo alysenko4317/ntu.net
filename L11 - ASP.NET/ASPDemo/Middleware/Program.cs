@@ -90,7 +90,7 @@ namespace HelloWorld_5
                 // встановлення довільного (користувацького) заголовка
                 context.Response.Headers.Append("secret-id", "256");
 
-                context.Response.StatusCode = 200;  // 404
+                context.Response.StatusCode = 200;
 
                 await context.Response.WriteAsync(responseString.ToString());
             });
@@ -195,7 +195,7 @@ namespace HelloWorld_5
         // SAMPLE 8: response with a file or image
         // ---------------------------------------------------------
 
-        public static void Main_8(string[] args)
+        public static void Main(string[] args)
         {
             var app = WebApplication.CreateBuilder(args).Build();
 
@@ -222,7 +222,7 @@ namespace HelloWorld_5
         // SAMPLE 9: serving static files (like Apache)
         // ---------------------------------------------------------
 
-        public static void Main(string[] args)
+        public static void Main_9(string[] args)
         {
             var app = WebApplication.CreateBuilder(args).Build();
 
@@ -235,6 +235,7 @@ namespace HelloWorld_5
                 response.ContentType = "text/html; charset=utf-8";
                 if (File.Exists(fullPath))
                 {
+                    //context.Response.Headers.ContentDisposition = "attachment; filename=example.jpg";
                     await response.SendFileAsync(fullPath);
                 }
                 else
@@ -243,17 +244,6 @@ namespace HelloWorld_5
                     await response.WriteAsync("<h1>Not Found</h1>");
                 }
             });
-
-            app.Run();
-        }
-
-        // ---------------------------------------------------------
-        // SAMPLE 10: --
-        // ---------------------------------------------------------
-
-        public static void Main_10(string[] args)
-        {
-            var app = WebApplication.CreateBuilder(args).Build();
 
             app.Run();
         }
