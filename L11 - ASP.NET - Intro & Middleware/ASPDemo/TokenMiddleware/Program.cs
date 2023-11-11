@@ -35,9 +35,9 @@ namespace HelloWorld_5
         public static void Main(string[] args)
         {
             var app = WebApplication.CreateBuilder(args).Build();
-
-            //app.UseMiddleware<TokenMiddleware>();    // або так:
-            app.UseToken();
+            
+            app.UseMiddleware<TokenMiddleware>();    // або так:
+            //app.UseToken();
 
             app.Run(async (context) => await context.Response.WriteAsync("Hello!"));
 
