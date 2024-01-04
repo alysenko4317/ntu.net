@@ -14,13 +14,13 @@ namespace webblog.Models
                 context.Categories.AddRange(
                     new Category
                     {
-                        Title = "Разработка",
-                        Description = "Разработка программного обеспечения"
+                        Title = "Розробка",
+                        Description = "Розробка програмного забезпечення"
                     },
                     new Category
                     {
                         Title = "Рецепты",
-                        Description = "Кулинарные рецепты на все случаи жизни"
+                        Description = "Кулінарні рецепти на всі випадки життя"
                     });
 
                 context.SaveChanges();
@@ -33,8 +33,8 @@ namespace webblog.Models
                     {
                         Title = "sample post",
                         IsDraft = false,
-                        Content = "Сегодня мы создали MVC веб-приложение!",
-                        Category = context.Categories.Where(b => b.Title == "Разработка").FirstOrDefault(),
+                        Content = "Сьогодні ми створили MVC веб-додаток!",
+                        Category = context.Categories.Where(b => b.Title == "Розробка").FirstOrDefault(),
                         PublishDate = DateTime.Now
                     });
 

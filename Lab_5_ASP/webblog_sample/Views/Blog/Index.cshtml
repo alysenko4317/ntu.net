@@ -1,12 +1,34 @@
-﻿
-<div class="text-center">
-    <h2 class="text-muted">Мои записи</h2>
-</div>
+﻿@model IEnumerable<webblog.Models.Post>
 
-@foreach (var p in Model)
-{
-    @p.Title <!-- заголовок записи -->
-    @p.Category.Title<br><!-- доступ к Foreign Key -->
-    @p.Content
-    <br><a href="/blog/modify?id=@p.Id">modify</a>
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog Posts</title>
+    <!-- Add relevant stylesheets and scripts here -->
+</head>
+<body>
+    <div class="container">
+        <h2>Blog Posts</h2>
+
+        @foreach (var post in Model)
+        {
+            <div class="blog-post">
+                <h3>@post.Title</h3>
+                <p>Category: @post.Category?.Title</p>
+                <p>Published on: @post.PublishDate.ToString("d")</p>
+                <div class="blog-content">@post.Content</div>
+                <div class="blog-actions">
+                    <a asp-action="Edit" asp-route-id="@post.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@post.Id">Delete</a>
+                </div>
+            </div>
+        }
+
+        <br><a asp-action="Create">Create New Post</a>
+    </div>
+
+    <!-- Add any additional scripts here -->
+</body>
+</html>
