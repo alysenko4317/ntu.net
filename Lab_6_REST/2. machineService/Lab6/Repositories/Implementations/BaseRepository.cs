@@ -10,7 +10,7 @@ namespace Lab6.Repositories.Implementations
     public class BaseRepository<TDbModel>
         : IBaseRepository<TDbModel> where TDbModel : BaseModel
     {
-        private ApplicationContext Context { get; set; }
+        protected ApplicationContext Context { get; set; }
 
         public BaseRepository(ApplicationContext context) {
             Context = context;
@@ -44,7 +44,7 @@ namespace Lab6.Repositories.Implementations
             return toUpdate;
         }
 
-        public TDbModel Get(Guid id) {
+        public virtual TDbModel Get(Guid id) {
             return Context.Set<TDbModel>().FirstOrDefault(m => m.Id == id);
         }
     }

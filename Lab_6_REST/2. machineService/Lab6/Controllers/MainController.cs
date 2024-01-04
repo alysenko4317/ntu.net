@@ -18,18 +18,27 @@ namespace Lab6.Controllers
             Documents = document;
         }
 
-        [HttpGet]
+        [HttpGet]  // GET: api/Main
         public JsonResult Get() {
             return new JsonResult(Documents.GetAll());
         }
 
-        [HttpPost]
-        public JsonResult Post() {
-            RepairService.Work();
+        [HttpGet("{id}")]   // GET: api/Main/{id}
+        public ActionResult<Document> GetReportWithDetails(Guid id) {
+            var report = Documents.Get(id);
+            if (report == null)
+                return NotFound();
+            return report;
+        }
+
+        [HttpPost]  // POST: api/Main
+        public JsonResult Post([FromBody] RepairRequest rq)
+        {
+            RepairService.Work(rq.WorkerId, rq.CarName, rq.CarRegistrationNumber);
             return new JsonResult("Work was successfully done");
         }
 
-        [HttpPut]
+        [HttpPut]  // PUT: api/Main
         public JsonResult Put(Document doc)
         {
             bool success = true;
@@ -50,7 +59,7 @@ namespace Lab6.Controllers
                 : new JsonResult("Update was not successful");
         }
 
-        [HttpDelete]
+        [HttpDelete]  // DELETE: api/Main/{id}
         public JsonResult Delete(Guid id)
         {
             bool success = true;

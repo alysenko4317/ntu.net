@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автосервіс</title>
+    <style>
+        .modal-lg { max-width: 80%; /* Adjust the width of large modals */ }
+        .modal-body .row { padding: 5px 0; /* Spacing within each row */ }
+        .font-weight-bold { color: #0056b3; /* Custom color for the key labels */ }
+    </style>
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+    $(document).ready(function() {
+    
+    // Set default value for the server IP and port textbox
+    var defaultUrl = window.location.protocol + '//' + window.location.hostname;
+    if (window.location.port)
+        defaultUrl += ':' + window.location.port;
+    $('#urlInput').val(defaultUrl); // Do not append '/Main'
+
+    // Open New Repair Modal
+    $('#newRepair').click(function() {
+        // Fetch workers to populate the dropdown
+        $.get($('#urlInput').val() + '/api/Workers', function(workers) {
+            var workerSelect = $('#workerSelect');
+            workerSelect.empty();
+            workers.forEach(function(worker) {
+                workerSelect.append(new Option(worker.name + ' (' + worker.position + ')', worker.id));
+            });
+        });
+        $('#newRepairModal').modal('show');  // Show the modal
+    });
+
+    // Handle New Repair Form Submission
+    $('#newRepairForm').on('submit', function(e) {
+        e.preventDefault();
+        var repairData = JSON.stringify({
+            carRegistrationNumber: $('#carRegistrationNumber').val(),
+            carName: $('#carName').val(), // Add car name to the data
+            workerId: $('#workerSelect').val()
+        });
+        $.ajax({
+            url: $('#urlInput').val() + '/Main', // Adjust URL if necessary
+            type: 'POST',
+            contentType: 'application/json',
+            data: repairData,
+            success: function(response) {
+                // Handle the response
+                alert("New repair registered successfully!");
+                $('#newRepairModal').modal('hide');
+                $('#newRepairForm').trigger("reset");
+            },
+            error: function() {
+                alert("Error registering new repair.");
+            }
+        });
+    });
+
+    $('#getAllReports').click(function() {
+        $.get($('#urlInput').val() + '/Main', function(data, status) {
+            let reportsList = $('#reportsList');
+            reportsList.empty();
+            data.forEach(function(report) {
+                reportsList.append(
+                    '<li class="list-group-item">' +
+                    '<a href="#" data-toggle="modal" data-target="#reportModal" data-report-id="' + report.id + '">' +
+                    'Report ID: ' + report.id +
+                    '</a>' +
+                    '</li>'
+                );
+            });
+        });
+    });
+
+    $('#reportModal').on('show.bs.modal', function(event) {
+        var button = $(event.relatedTarget);
+        var report = button.data('report');
+        var modal = $(this);
+        var modalBody = modal.find('.modal-body');
+        modalBody.empty();
+        var contentHtml = '<div class="card"><div class="card-body">';
+        for (var key in report) {
+            if (report.hasOwnProperty(key)) {
+                contentHtml += '<div class="row mb-3">' +
+                               '<div class="col-sm-4 font-weight-bold">' + key + ':</div>' +
+                               '<div class="col-sm-8">' + report[key] + '</div>' +
+                               '</div>';
+            }
+        }
+        contentHtml += '</div></div>';
+        modalBody.html(contentHtml);
+    });
+
+    $('#reportsList').on('click', 'a', function(e) {
+        e.preventDefault();
+        var reportId = $(this).data('report-id');
+        // Fetch the detailed report data from the API
+        $.get($('#urlInput').val() + '/Main/' + reportId, function(detailedReport) {
+            var modal = $('#reportModal');
+            var modalBody = modal.find('.modal-body');
+            modalBody.empty();
+            // Construct the modal content with detailed report data
+            var contentHtml = '<div class="card"><div class="card-body">';
+            contentHtml += '<p>Worker Name: ' + detailedReport.worker.name + '</p>';
+            contentHtml += '<p>Worker Position: ' + detailedReport.worker.position + '</p>';
+            contentHtml += '<p>Worker Phone: ' + detailedReport.worker.telephone + '</p>';
+            contentHtml += '<p>Car Registration Number: ' + detailedReport.car.number + '</p>';
+            contentHtml += '<p>Car Name: ' + detailedReport.car.name + '</p>';
+            // ... Add more details as needed ...
+            contentHtml += '</div></div>';
+            modalBody.html(contentHtml);
+            modal.modal('show');
+        });
+    });
+
+    // Toggle Worker Registration Form
+    $('#toggleWorkerForm').click(function() {
+        $('#workerRegistrationForm').toggle();
+    });
+        
+    // Handle the worker registration form submission
+    $('#registerWorkerForm').on('submit', function(e) {
+        e.preventDefault();
+        var workerData = JSON.stringify({
+            name: $('#workerName').val(),
+            position: $('#workerPosition').val(),
+            telephone: $('#workerTelephone').val()
+        });
+        $.ajax({
+            url: $('#urlInput').val() + '/api/Workers',
+            type: 'POST',
+            contentType: 'application/json',
+            data: workerData,
+            success: function(response) {
+                // Handle the response
+                alert("Worker registered successfully!");
+                // Close the modal and clear the form
+                $('#registerWorkerModal').modal('hide');
+                $('#registerWorkerForm').trigger("reset");
+            },
+            error: function() {
+                alert("Error registering worker.");
+            }
+        });
+    });
+
+    });
+    </script>
+</head>
+<body>
+
+<!-- Navbar Admin Menu -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- ... other navbar content ... -->
+    <button class="btn btn-primary" data-toggle="modal" data-target="#registerWorkerModal">
+        Register Worker
+    </button>
+</nav>
+
+<!-- Modal for Registering a Worker -->
+<div class="modal fade" id="registerWorkerModal" tabindex="-1" role="dialog" aria-labelledby="registerWorkerModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerWorkerModalLabel">Register New Worker</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="registerWorkerForm">
+                    <!-- Form fields for worker registration -->
+                    <div class="form-group">
+                        <label for="workerName">Name:</label>
+                        <input type="text" class="form-control" id="workerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="workerPosition">Position:</label>
+                        <input type="text" class="form-control" id="workerPosition" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="workerTelephone">Telephone:</label>
+                        <input type="text" class="form-control" id="workerTelephone" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register Worker</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Repair Modal -->
+<div class="modal fade" id="newRepairModal" tabindex="-1" role="dialog" aria-labelledby="newRepairModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="newRepairModalLabel">New Repair</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="newRepairForm">
+                    <div class="form-group">
+                        <label for="carName">Car Name:</label>
+                        <input type="text" class="form-control" id="carName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="carRegistrationNumber">Car Registration Number:</label>
+                        <input type="text" class="form-control" id="carRegistrationNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="workerSelect">Assign Worker:</label>
+                        <select class="form-control" id="workerSelect" required></select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reportModalLabel">Деталі звіту</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Report details will be added here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <h1 class="mb-4">Автосервіс</h1>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Enter server IP and TCP-port (e.g., http://localhost:5000)" id="urlInput">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="newRepair">Новий ремонт</button>
+            <button class="btn btn-outline-secondary" type="button" id="getAllReports">Отримати всі звіти</button>
+        </div>
+    </div>
+    <ul class="list-group" id="reportsList">
+        <!-- Reports will be added here dynamically -->
+    </ul>
+</div>
+
+</body>
+</html>
