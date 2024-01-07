@@ -69,10 +69,10 @@
             data.forEach(function(report) {
                 reportsList.append(
                     '<li class="list-group-item">' +
-                    '<a href="#" data-toggle="modal" data-target="#reportModal" data-report-id="' + report.id + '">' +
+                    '<a href="#" data-toggle="modal"' +
+                    'data-target="#reportModal" data-report-id="' + report.id + '">' +
                     'Report ID: ' + report.id +
-                    '</a>' +
-                    '</li>'
+                    '</a>' + '</li>'
                 );
             });
         });
@@ -155,107 +155,109 @@
 </head>
 <body>
 
-<!-- Navbar Admin Menu -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <!-- ... other navbar content ... -->
-    <button class="btn btn-primary" data-toggle="modal" data-target="#registerWorkerModal">
-        Register Worker
-    </button>
-</nav>
+    <!-- Navbar Admin Menu -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- ... other navbar content ... -->
+        <button class="btn btn-primary" data-toggle="modal" data-target="#registerWorkerModal">
+            Register Worker
+        </button>
+    </nav>
 
-<!-- Modal for Registering a Worker -->
-<div class="modal fade" id="registerWorkerModal" tabindex="-1" role="dialog" aria-labelledby="registerWorkerModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="registerWorkerModalLabel">Register New Worker</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="registerWorkerForm">
-                    <!-- Form fields for worker registration -->
-                    <div class="form-group">
-                        <label for="workerName">Name:</label>
-                        <input type="text" class="form-control" id="workerName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="workerPosition">Position:</label>
-                        <input type="text" class="form-control" id="workerPosition" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="workerTelephone">Telephone:</label>
-                        <input type="text" class="form-control" id="workerTelephone" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Register Worker</button>
-                </form>
+    <!-- Modal for Report Details -->
+    <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reportModalLabel">Деталі звіту</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Report details will be added here -->
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- New Repair Modal -->
-<div class="modal fade" id="newRepairModal" tabindex="-1" role="dialog" aria-labelledby="newRepairModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="newRepairModalLabel">New Repair</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="newRepairForm">
-                    <div class="form-group">
-                        <label for="carName">Car Name:</label>
-                        <input type="text" class="form-control" id="carName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="carRegistrationNumber">Car Registration Number:</label>
-                        <input type="text" class="form-control" id="carRegistrationNumber" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="workerSelect">Assign Worker:</label>
-                        <select class="form-control" id="workerSelect" required></select>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+    <!-- Modal for Registering a Worker -->
+    <div class="modal fade" id="registerWorkerModal" tabindex="-1" role="dialog" aria-labelledby="registerWorkerModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerWorkerModalLabel">Register New Worker</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerWorkerForm">
+                        <!-- Form fields for worker registration -->
+                        <div class="form-group">
+                            <label for="workerName">Name:</label>
+                            <input type="text" class="form-control" id="workerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="workerPosition">Position:</label>
+                            <input type="text" class="form-control" id="workerPosition" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="workerTelephone">Telephone:</label>
+                            <input type="text" class="form-control" id="workerTelephone" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Register Worker</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Modal -->
-<div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="reportModalLabel">Деталі звіту</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!-- Report details will be added here -->
+    <!-- New Repair Modal -->
+    <div class="modal fade" id="newRepairModal" tabindex="-1" role="dialog" aria-labelledby="newRepairModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newRepairModalLabel">New Repair</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="newRepairForm">
+                        <div class="form-group">
+                            <label for="carName">Car Name:</label>
+                            <input type="text" class="form-control" id="carName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="carRegistrationNumber">Car Registration Number:</label>
+                            <input type="text" class="form-control" id="carRegistrationNumber" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="workerSelect">Assign Worker:</label>
+                            <select class="form-control" id="workerSelect" required></select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="container mt-4">
-    <h1 class="mb-4">Автосервіс</h1>
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Enter server IP and TCP-port (e.g., http://localhost:5000)" id="urlInput">
-        <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="newRepair">Новий ремонт</button>
-            <button class="btn btn-outline-secondary" type="button" id="getAllReports">Отримати всі звіти</button>
+
+
+    <div class="container mt-4">
+        <h1 class="mb-4">Автосервіс</h1>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Enter server IP and TCP-port (e.g., http://localhost:5000)" id="urlInput">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="newRepair">Новий ремонт</button>
+                <button class="btn btn-outline-secondary" type="button" id="getAllReports">Отримати всі звіти</button>
+            </div>
         </div>
+        <ul class="list-group" id="reportsList">
+            <!-- Reports will be added here dynamically -->
+        </ul>
     </div>
-    <ul class="list-group" id="reportsList">
-        <!-- Reports will be added here dynamically -->
-    </ul>
-</div>
 
 </body>
 </html>

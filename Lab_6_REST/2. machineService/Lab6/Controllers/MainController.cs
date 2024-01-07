@@ -18,27 +18,27 @@ namespace Lab6.Controllers
             Documents = document;
         }
 
-        [HttpGet]  // GET: api/Main
+        [HttpGet]  // GET: /Main
         public JsonResult Get() {
             return new JsonResult(Documents.GetAll());
         }
 
-        [HttpGet("{id}")]   // GET: api/Main/{id}
-        public ActionResult<Document> GetReportWithDetails(Guid id) {
+        [HttpGet("{id}")]   // GET: /Main/{id}
+        public ActionResult<Document> GetById(Guid id) {
             var report = Documents.Get(id);
             if (report == null)
                 return NotFound();
             return report;
         }
 
-        [HttpPost]  // POST: api/Main
+        [HttpPost]  // POST: /Main
         public JsonResult Post([FromBody] RepairRequest rq)
         {
             RepairService.Work(rq.WorkerId, rq.CarName, rq.CarRegistrationNumber);
             return new JsonResult("Work was successfully done");
         }
 
-        [HttpPut]  // PUT: api/Main
+        [HttpPut]  // PUT: /Main
         public JsonResult Put(Document doc)
         {
             bool success = true;

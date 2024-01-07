@@ -3,91 +3,141 @@ using Moq;
 using Xunit;
 using System;
 using System.Collections.Generic;
-
 using Lab6.Models;
 using Lab6.Controllers;
 using Lab6.Repositories.Interfaces;
 using Lab6.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;  // for JsonResult
+using Newtonsoft.Json;
+using System.Reflection.Metadata;
+using Document = Lab6.Models.Document;
 
 namespace Lab6_Tests
 {
     public class MainControllerTests
     {
         [Fact]
-        public void GetDataMessage()
+        public void GetAllDocuments()
         {
             var mockDocs = new Mock<IBaseRepository<Document>>();
             var mockService = new Mock<IRepairService>();
             var document = GetDoc();
+            // setup to return the list that contains the document
             mockDocs.Setup(x => x.GetAll()).Returns(new List<Document> { document });
-
-            MainController controller = new MainController(mockService.Object, mockDocs.Object);  // Arrange
-            JsonResult result = controller.Get() as JsonResult;  // Act
-            Assert.Equal(new List<Document> { document }, result?.Value);  // Assert
+            MainController controller = new MainController(mockService.Object, mockDocs.Object);
+            JsonResult result = controller.Get() as JsonResult;
+            Assert.Equal(new List<Document> { document }, result?.Value);
         }
 
         [Fact]
-        public void GetNotNull()
+        public void GetDocumentById()
         {
             var mockDocs = new Mock<IBaseRepository<Document>>();
             var mockService = new Mock<IRepairService>();
-            mockDocs.Setup(x => x.Create(GetDoc())).Returns(GetDoc());
-
-            MainController controller = new MainController(mockService.Object, mockDocs.Object);  // Arrange
-            JsonResult result = controller.Get() as JsonResult;  // Act
-            Assert.NotNull(result);  // Assert
+            var document = GetDoc();
+            // setup to return the document when Get is called with the ID
+            mockDocs.Setup(x => x.Get(document.Id)).Returns(document);
+            MainController controller = new MainController(mockService.Object, mockDocs.Object);
+            JsonResult result = new JsonResult(controller.GetById(document.Id).Value);
+            Assert.Equal(document, result?.Value);
         }
 
         [Fact]
-        public void PostDataMessage()
+        public void GetDocumentById_NotFound()
         {
             var mockDocs = new Mock<IBaseRepository<Document>>();
             var mockService = new Mock<IRepairService>();
-            mockDocs.Setup(x => x.Create(GetDoc())).Returns(GetDoc());
-
-            MainController controller = new MainController(mockService.Object, mockDocs.Object);  // Arrange
-            JsonResult result = controller.Post() as JsonResult;  // Act
-            Assert.Equal("Work was successfully done", result?.Value);  // Assert
+            mockDocs.Setup(x => x.Get(It.IsAny<Guid>())).Returns((Document)null); // assuming no documents are found
+            MainController controller = new MainController(mockService.Object, mockDocs.Object);
+            var result = controller.GetById(Guid.NewGuid()).Result as NotFoundResult;
+            Assert.NotNull(result);  // ensuring that the result is a NotFoundResult
         }
 
         [Fact]
-        public void UpdateDataMessage()
+        public void CreateDocument()
+        {
+            // setup test data for repair request
+            var repairRequest = new RepairRequest() {
+                WorkerId = Guid.NewGuid(),
+                CarName = "Skoda Rapid",
+                CarRegistrationNumber = "AX5060AX"
+            };
+
+            var mockDocs = new Mock<IBaseRepository<Document>>();
+            var mockService = new Mock<IRepairService>();
+
+            // setup mock service to ensure the correct parameters are passed to Work() method
+            mockService.Setup(service => service.Work(It.IsAny<Guid>(), It.IsAny<string>(), It.IsAny<string>()))
+                       .Callback<Guid, string, string>((wId, carName, carNumber) => {
+                           // check actually passed values
+                           Assert.Equal(wId, repairRequest.WorkerId);
+                           Assert.Equal(carName, repairRequest.CarName);
+                           Assert.Equal(carNumber, repairRequest.CarRegistrationNumber);
+                       });
+
+            // creating the controller and invoking the Post method
+            MainController controller = new MainController(mockService.Object, mockDocs.Object);
+            JsonResult result = controller.Post(repairRequest) as JsonResult;
+            Assert.Equal("Work was successfully done", result?.Value);
+        }
+        
+        [Fact]
+        public void ModifyDocument()
+        {
+            var originalDocument = GetDoc();
+            var updatedDocument = GetDoc();
+            updatedDocument.Id = originalDocument.Id; // assuming other properties are updated
+
+            var mockDocs = new Mock<IBaseRepository<Document>>();
+            var mockService = new Mock<IRepairService>();
+
+            // setup to return the original document when Get is called with the ID
+            mockDocs.Setup(x => x.Get(originalDocument.Id)).Returns(originalDocument);
+
+            // setup to capture the updated document and verify it
+            mockDocs.Setup(x => x.Update(It.IsAny<Document>()))
+                    .Callback<Document>(d => {
+                        // to compare objects by values convert them to JSON string and than compare
+                        Assert.Equal(JsonConvert.SerializeObject(updatedDocument),
+                                     JsonConvert.SerializeObject(d));
+                    })
+                    .Returns(updatedDocument); // return the updated document
+
+            // creating the controller and invoking the Put method
+            MainController controller = new MainController(mockService.Object, mockDocs.Object);
+            JsonResult result = controller.Put(updatedDocument);
+            Assert.Equal($"Update successful {originalDocument.Id}", result?.Value);
+        }
+        
+        [Fact]
+        public void DeleteDocument()
         {
             var mockDocs = new Mock<IBaseRepository<Document>>();
             var mockService = new Mock<IRepairService>();
             var document = GetDoc();
 
+            // setup to return the document when Get is called with the ID
             mockDocs.Setup(x => x.Get(document.Id)).Returns(document);
-            mockDocs.Setup(x => x.Update(document)).Returns(document);
 
-            MainController controller = new MainController(mockService.Object, mockDocs.Object);  // Arrange
-            JsonResult result = controller.Put(document) as JsonResult;  // Act
-            Assert.Equal($"Update successful {document.Id}", result?.Value);  // Assert
-        }
+            // setup to ensure that correct document ID was passed to the Delete method
+            mockDocs.Setup(x => x.Delete(It.IsAny<Guid>()))
+                    .Callback<Guid>(id => {
+                        Assert.Equal(id, document.Id);
+                    });
 
-        [Fact]
-        public void DeleteDataMessage()
-        {
-            var mockDocs = new Mock<IBaseRepository<Document>>();
-            var mockService = new Mock<IRepairService>();
-            var doc = GetDoc();
-
-            mockDocs.Setup(x => x.Get(doc.Id)).Returns(doc);
-            mockDocs.Setup(x => x.Delete(doc.Id));
-
-            MainController controller = new MainController(mockService.Object, mockDocs.Object);  // Arrange
-            JsonResult result = controller.Delete(doc.Id) as JsonResult;  // Act
-            Assert.Equal("Delete successful", result?.Value);  // Assert
+            // creating the controller and invoking the Delete method
+            MainController controller = new MainController(mockService.Object, mockDocs.Object);
+            JsonResult result = controller.Delete(document.Id) as JsonResult;
+            Assert.Equal("Delete successful", result?.Value);
         }
 
         public Document GetDoc()
         {
+            var carId = Guid.NewGuid();
+            var workerId = Guid.NewGuid();
             var mockCars = new Mock<IBaseRepository<Car>>();
             var mockWorkers = new Mock<IBaseRepository<Worker>>();
 
-            var carId = Guid.NewGuid();
-            var workerId = Guid.NewGuid();
             mockCars.Setup(x => x.Create(new Car() {
                 Id = carId,
                 Name = "car",
