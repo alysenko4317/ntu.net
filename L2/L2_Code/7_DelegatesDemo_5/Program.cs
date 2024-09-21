@@ -9,11 +9,15 @@
         _sum = sum;
     }
 
+    // використання мультікаст-делегатів
+
     public void RegisterHandler(AccountStateHandler del) {
-        _listeners += del;
+        //_listeners = System.Delegate.Combine(_listeners, del) as AccountStateHandler;
+        _listeners = _listeners + del;
     }
 
     public void UnregisterHandler(AccountStateHandler del) {
+        //_listeners = System.Delegate.Remove(_listeners, del) as AccountStateHandler;
         _listeners -= del;
     }
 

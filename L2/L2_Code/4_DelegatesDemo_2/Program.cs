@@ -5,10 +5,10 @@
     static void Main(string[] args)
     {
         Operation del = new Operation(Add);
-        int result = del.Invoke(4, 5);
+        int result = del.Invoke(4, 5);  // виклик делегату (методу Add)
         Console.WriteLine(result);
         del = Multiply;
-        result = del.Invoke(4, 5);
+        result = del.Invoke(4, 5);  // виклик делегату (методу Multiply)
         Console.WriteLine(result);
         Console.Read();
     }

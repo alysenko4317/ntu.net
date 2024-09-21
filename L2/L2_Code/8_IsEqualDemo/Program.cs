@@ -4,6 +4,8 @@
 
     static void Main(string[] args)
     {
+        // використання lambda-виразів
+
         int[] integers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         int result1 = Sum(integers, x => x > 5);
         Console.WriteLine(result1); // 30

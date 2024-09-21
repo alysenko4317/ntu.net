@@ -19,6 +19,8 @@
 
     public void Put(int sum)
     {
+        // погане рішення
+
         if (sum > 0) {
             _sum += sum;
             Console.WriteLine($"Successfully deposited {sum} units.");
@@ -30,6 +32,8 @@
 
     public void Withdraw(int sum)
     {
+        // гарне рішення
+
         if (sum <= _sum)
         {
             _sum -= sum;

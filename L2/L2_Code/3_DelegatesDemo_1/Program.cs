@@ -2,18 +2,19 @@
 
 class Program
 {
-    delegate void GetMessage();
+    delegate void GetMessage();  // оголошення типу
 
     static void Main(string[] args)
     {
-        GetMessage del;
+        GetMessage del;  // створення змінної делегатного типу
 
         if (DateTime.Now.Hour < 12)
             del = GoodMorning;
         else
             del = GoodEvening;
 
-        del.Invoke();
+        del.Invoke();  // виклик делегату
+
         Console.ReadLine();
     }
 

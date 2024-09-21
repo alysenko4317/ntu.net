@@ -1,15 +1,47 @@
 using System;
 using System.Net.Http;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
+
+/*
+Ця програма демонструє концепцію слабкої зв'язаності в об'єктно-орієнтованому програмуванні (ООП) через використання двох інтерфейсів:
+1. IMessage - абстракція повідомлення, яка дозволяє використовувати різні форми повідомлень (текстові, HTML тощо).
+2. IMessageSender - абстракція відправника повідомлень, що дозволяє надсилати повідомлення через різні канали (консоль, діалогові вікна тощо).
+
+Основні переваги даної архітектури:
+- **Слабка зв'язаність**: 
+  Клас Program не прив'язаний до конкретних реалізацій повідомлень або способів їх відправки. Це дозволяє легко змінювати логіку 
+  надсилання повідомлень або сам формат повідомлень без необхідності вносити зміни в основний код.
+- **Розширюваність**: 
+  Для додавання нових типів повідомлень (наприклад, повідомлення у форматі JSON) або нових способів їх відправки (наприклад, через HTTP) 
+  достатньо створити нові класи, що реалізують інтерфейси IMessage та IMessageSender відповідно. Основна логіка залишиться незмінною.
+- **Інверсія залежностей**: 
+  Програма залежить не від конкретних класів реалізацій, а від абстракцій (інтерфейсів). Це відповідає принципу інверсії залежностей 
+  (Dependency Inversion Principle) з SOLID, що робить код більш гнучким і менш залежним від конкретних реалізацій.
+
+У цій програмі:
+- **IMessage** реалізує два різних типи повідомлень: `TextMessage` (простий текст) та `HtmlMessage` (HTML-форматоване повідомлення).
+  Кожен тип повідомлення має два методи: `ToString()` для текстового представлення та `ToHtml()` для HTML-представлення.
+- **IMessageSender** реалізує дві різні стратегії відправки повідомлень:
+  - `ConsoleMessageSender` виводить повідомлення у текстовому вигляді в консоль.
+  - `HtmlDialogMessageSender` відображає HTML-форматовані повідомлення у діалоговому вікні з використанням Windows Forms.
+
+Така архітектура дозволяє легко змінювати або розширювати як способи відправки повідомлень, так і формати самих повідомлень,
+не змінюючи основну структуру програми.
+*/
 
 namespace InterfacesDemo_3
 {
+    //---------------------------------------------------
     /* *** IMessage *** */
+    //---------------------------------------------------
 
     interface IMessage {
         string ToHtml();
         string ToString();
     }
+
+    //---------------------------------------------------
 
     class TextMessage : IMessage
     {
@@ -62,11 +94,15 @@ namespace InterfacesDemo_3
         }
     }
 
+    //---------------------------------------------------
     /* *** IMessageSender *** */
+    //---------------------------------------------------
 
     interface IMessageSender {
         void SendMessage(IMessage message);
     }
+
+    //---------------------------------------------------
 
     class ConsoleMessageSender : IMessageSender
     {
@@ -110,12 +146,22 @@ namespace InterfacesDemo_3
         }
     }
 
+    //---------------------------------------------------
+    // Main
+    //---------------------------------------------------
 
     class Program
     {
+        // Оголошення зовнішньої функції для створення консолі
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool AllocConsole();
+
         [STAThread]
         static void Main()
         {
+            AllocConsole();
+
             IMessage textMessage = new TextMessage("This is a simple text message.");
             IMessage htmlMessage = new HtmlMessage("This is an HTML message with a custom type.", "alert");
 
@@ -123,6 +169,9 @@ namespace InterfacesDemo_3
             IMessageSender consoleSender = new ConsoleMessageSender();
             consoleSender.SendMessage(textMessage);
             consoleSender.SendMessage(htmlMessage);
+
+            // Залишаємо консоль видимою перед відкриттям вікна
+            Console.ReadKey();
 
             // HTMLDialog message sender
             IMessageSender dialogSender = new HtmlDialogMessageSender(new Form());

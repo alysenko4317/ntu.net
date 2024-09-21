@@ -14,8 +14,10 @@ class Program
         Console.ReadLine();
     }
 
+    // передача делегату як параметра методу
     private static void ShowMessage(GetMessage _del) {
-        _del.Invoke();
+        //_del.Invoke();
+        _del();  // скорочена форма виклику
     }
 
     private static void GoodMorning() {
