@@ -68,7 +68,7 @@ namespace PgsqlAdoDemo
         {
             string userName = "postgres";
             string userPass = "1234";
-            string connString = $"Host=localhost;Port=5433;Username={userName};Password={userPass};Database=car_portal";
+            string connString = $"Host=localhost;Port=5432;Username={userName};Password={userPass};Database=car_portal";
 
             IUserDao userDao = new UserDao(connString);
 

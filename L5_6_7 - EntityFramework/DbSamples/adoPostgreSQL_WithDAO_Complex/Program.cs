@@ -220,7 +220,7 @@ namespace PgsqlAdoDemo
         {
             string userName = "postgres";
             string userPass = "1234";
-            string connString = $"Host=localhost;Port=5433;Username={userName};Password={userPass};Database=car_portal";
+            string connString = $"Host=localhost;Port=5432;Username={userName};Password={userPass};Database=car_portal";
 
             var accountRepo = new AccountRepository(connString, true);  // set true if you want to load cars with accounts
 
