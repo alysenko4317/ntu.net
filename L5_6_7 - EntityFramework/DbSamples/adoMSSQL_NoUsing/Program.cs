@@ -11,7 +11,7 @@ namespace ADONetConsoleApp
         static void Main(string[] args)
         {
             string connString =
-                @"Server=(localdb)\mssqllocaldb;Database=schooldb;Trusted_Connection=True;MultipleActiveResultSets=True";
+                @"Server=(localdb)\MSSQLLocalDB;Database=testDB;Trusted_Connection=True;";
 
             SqlConnection connection = null;
             SqlCommand command = null;
@@ -22,7 +22,7 @@ namespace ADONetConsoleApp
                 connection = new SqlConnection(connString);
                 connection.Open();
 
-                command = new SqlCommand("SELECT Id, SubjectName FROM SubjectSet", connection);
+                command = new SqlCommand("SELECT * FROM t_customer", connection);
                 reader = command.ExecuteReader();
 
                 Console.WriteLine("Id | SubjectName");

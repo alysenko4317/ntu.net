@@ -39,6 +39,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "16_EnumerableQueriable", "E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "14_LazyEagerLoad", "LazyEagerLoad\14_LazyEagerLoad.csproj", "{03BAC8B4-AB61-4642-BC1D-EEB4F3C64724}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_1_adoMSSQL_AppConfig.csproj", "adoMSSQL_AppConfig\_1_adoMSSQL_AppConfig.csproj", "{3F3CC53B-87CE-455E-A09F-5FA91F20739C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{03BAC8B4-AB61-4642-BC1D-EEB4F3C64724}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03BAC8B4-AB61-4642-BC1D-EEB4F3C64724}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03BAC8B4-AB61-4642-BC1D-EEB4F3C64724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F3CC53B-87CE-455E-A09F-5FA91F20739C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F3CC53B-87CE-455E-A09F-5FA91F20739C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F3CC53B-87CE-455E-A09F-5FA91F20739C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F3CC53B-87CE-455E-A09F-5FA91F20739C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,9 +1,8 @@
-﻿using System;
-using System.Data;
-using System.Data.SqlClient;
-
+﻿using System.Data.SqlClient;
+using System.Configuration;
 
 // install System.Data.SqlClient
+// install System.Configuration.ConfigurationManager
 
 namespace ADONetConsoleApp
 {
@@ -11,10 +10,11 @@ namespace ADONetConsoleApp
     {
         static void Main(string[] args)
         {
-            string connString =
-                @"Server=(localdb)\MSSQLLocalDB;Database=testDB;Trusted_Connection=True;";
+            string connectionString = ConfigurationManager.ConnectionStrings["DbConnection"].ConnectionString;
 
-            using (SqlConnection connection = new SqlConnection(connString))
+            Console.WriteLine(connectionString);
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 using (SqlCommand command = new SqlCommand("SELECT * FROM t_customer", connection))
