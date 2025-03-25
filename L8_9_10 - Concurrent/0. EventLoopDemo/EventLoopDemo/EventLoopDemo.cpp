@@ -1,4 +1,5 @@
 #include <windows.h>
+#include <tchar.h>
 
 // Global variables
 HWND hwnd;
@@ -13,15 +14,22 @@ HWND hwnd;
 // Function to handle window messages
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
+    TCHAR debugMessage[256];
+
     switch (uMsg) {
     case WM_CLOSE:
-
+        swprintf_s(debugMessage, sizeof(debugMessage) / sizeof(debugMessage[0]), _T("Received WM_CLOSE message. hwnd: %p\n"), hwnd);
+        OutputDebugString(debugMessage);
         DestroyWindow(hwnd);
         break;
     case WM_DESTROY:
+        swprintf_s(debugMessage, sizeof(debugMessage) / sizeof(debugMessage[0]), _T("Received WM_DESTROY message. hwnd: %p\n"), hwnd);
+        OutputDebugString(debugMessage);
         PostQuitMessage(0);
         break;
     default:
+        swprintf_s(debugMessage, sizeof(debugMessage) / sizeof(debugMessage[0]), _T("Received message: 0x%04X. hwnd: %p\n"), uMsg, hwnd);
+        OutputDebugString(debugMessage);
         return DefWindowProc(hwnd, uMsg, wParam, lParam);
     }
     return 0;

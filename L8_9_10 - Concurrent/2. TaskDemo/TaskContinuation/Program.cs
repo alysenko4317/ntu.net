@@ -18,7 +18,8 @@ namespace taskContinuation
             });
 
             // задача продолжения
-            Task task2 = task1.ContinueWith(t => {
+            Task task2 = task1.ContinueWith(t =>
+            {
                 Thread.Sleep(500);
                 Console.WriteLine($"task2, Current Task ID: {Task.CurrentId}  Previous Task: {t.Id}");
             }, TaskContinuationOptions.RunContinuationsAsynchronously);

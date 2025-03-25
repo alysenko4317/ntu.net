@@ -4,13 +4,11 @@ class Program
 {
     public class Test<T>
     {
-        public T First(T[] arr)
-        {
+        public T First(T[] arr) {
             return arr[0];
         }
 
-        public object First(object[] arr)
-        {
+        public object First(object[] arr) {
             return arr[0];
         }
     }

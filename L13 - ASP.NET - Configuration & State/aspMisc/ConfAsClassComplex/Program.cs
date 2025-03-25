@@ -27,7 +27,7 @@ namespace App
 
             var tom = new Person();
             app.Configuration.Bind(tom);
-
+           // app.Configuration.GetSection("Person").Bind(tom);
             app.Run(async (context) =>
             {
                 context.Response.ContentType = "text/html; charset=utf-8";

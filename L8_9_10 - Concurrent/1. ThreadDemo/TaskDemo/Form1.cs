@@ -41,7 +41,7 @@ namespace TaskDemo
             {
                 double res = 0;
                 long i = 0;
-                for (i = 0; i < 1000000000; i++)
+                for (i = 0; i < 10000000; i++)
                     res += Math.Sin(i) * Math.Cos(i);
             }));
 
@@ -49,7 +49,7 @@ namespace TaskDemo
             {
                 double res = 0;
                 long i = 0;
-                for (i = 0; i < 1000000000; i++)
+                for (i = 0; i < 10000000; i++)
                     res += Math.Sin(i);
             }));
 
@@ -57,14 +57,15 @@ namespace TaskDemo
             {
                 double res = 0;
                 long i = 0;
-                for (i = 0; i < 2000000000; i++)
+                for (i = 0; i < 20000000; i++)
                     res += Math.Cos(i);
             }));
 
             foreach (Task task in tasks)
                 task.Start();
 
-            Task.WaitAll(tasks.ToArray());
+         //   await Task.WhenAll(tasks);
+            Task.WaitAll(tasks.ToArray());  // а тут виникне deadlock
 
             Invoke(new Action(() => {
                 textBox2.Text = "Всі потоки завершили роботу!}";

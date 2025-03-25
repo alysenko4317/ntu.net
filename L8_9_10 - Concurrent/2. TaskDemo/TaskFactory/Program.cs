@@ -12,7 +12,7 @@ namespace task_2
         //    also Dispose example
         // --------------------------------------------------------------------------
 
-        public static void Main()
+        public static void Add()
         {
             Console.WriteLine("Основной поток запущен");
 

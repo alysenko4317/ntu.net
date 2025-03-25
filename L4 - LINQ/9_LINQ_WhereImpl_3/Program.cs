@@ -8,7 +8,7 @@ public class TestSet : IEnumerable<int>
     {
         for (int i = 1; i <= 100; i++)
         {
-            Console.WriteLine("Обращение к элементу: {0}", i);
+            Console.WriteLine("Звернення до елементу: {0}", i);
             yield return i;
         }
     }
@@ -131,7 +131,7 @@ class Program
               .MyWhere(i => i.Length == 4);  // використаємо нашу власну реалізацію Where
 
         foreach (var item in resultSet) {
-            Console.Write(item + " ");
+            Console.Write(item + "\n");
         }
 
         Console.ReadLine();

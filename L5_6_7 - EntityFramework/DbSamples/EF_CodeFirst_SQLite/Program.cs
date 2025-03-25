@@ -19,7 +19,6 @@ namespace sqlite_app
             public int Id { get; set; }  // or UserId
             public string? Name { get; set; }
             public int Age { get; set; }
-
         }
 
         public class MyDbContext : DbContext
@@ -64,6 +63,7 @@ namespace sqlite_app
 
                 // retriving objects from DB and print
                 var users = db.Users.ToList();
+
                 Console.WriteLine("List of objects:");
                 foreach (User u in users) {
                     Console.WriteLine($"{u.Id}.{u.Name} - {u.Age}");

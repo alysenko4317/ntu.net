@@ -13,13 +13,13 @@ namespace ADONetConsoleApp
         {
             string connString =
                 @"Server=(localdb)\MSSQLLocalDB;Database=testDB;Trusted_Connection=True;";
-
-            using (SqlConnection connection = new SqlConnection(connString))
+            
+            using (IDbConnection connection = new SqlConnection(connString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("SELECT * FROM t_customer", connection))
+                using (IDbCommand command = new SqlCommand("SELECT * FROM t_customer", connection as SqlConnection))
                 {
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    using (IDataReader reader = command.ExecuteReader())
                     {
                         Console.WriteLine("Id | SubjectName");
                         Console.WriteLine("-----------------");
@@ -40,3 +40,4 @@ namespace ADONetConsoleApp
         }
     }
 }
+

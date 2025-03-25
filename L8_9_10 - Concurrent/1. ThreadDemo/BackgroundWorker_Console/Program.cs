@@ -22,6 +22,8 @@ namespace Application
                 long j = i;
                 w.DoWork += (o, e) =>
                 {
+                    Console.WriteLine("Running worker: " + j);
+
                     long iterationsCount = ITERATIONS[j];      // why we can't use i here ?
                     BackgroundWorker sender = o as BackgroundWorker;
 

@@ -5,6 +5,7 @@ public class TestSet : IEnumerable<int>
 {
     public IEnumerator<int> GetEnumerator() {
         for (int i = 1; i <= 100; i++) {
+            Console.WriteLine("Звернення до елементу: {0}", i);
             yield return i;
         }
     }
@@ -36,11 +37,11 @@ class Program
         var resultSet =
             ts.Where(i => i % 2 == 0)
               .Select(i => "*" + i.ToString() + "*")
-             // .Where(i => i.Length == 4);
+              //.Where(i => i.Length == 4);
               .MyWhere(i => i.Length == 4);  // використаємо нашу власну реалізацію Where
 
         foreach (var item in resultSet) {
-            Console.Write(item + " ");
+            Console.Write(item + "\n");
         }
 
         Console.ReadLine();

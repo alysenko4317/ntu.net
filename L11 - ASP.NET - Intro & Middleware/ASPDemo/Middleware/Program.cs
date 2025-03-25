@@ -120,7 +120,7 @@ namespace HelloWorld_5
         // SAMPLE 5: list of request headers
         // ---------------------------------------------------------
 
-        public static void Main_5(string[] args)
+        public static void Main__(string[] args)
         {
             var app = WebApplication.CreateBuilder(args).Build();
 
@@ -195,7 +195,7 @@ namespace HelloWorld_5
         // SAMPLE 8: response with a file or image
         // ---------------------------------------------------------
 
-        public static void Main(string[] args)
+        public static void Main_(string[] args)
         {
             var app = WebApplication.CreateBuilder(args).Build();
 
@@ -222,7 +222,7 @@ namespace HelloWorld_5
         // SAMPLE 9: serving static files (like Apache)
         // ---------------------------------------------------------
 
-        public static void Main_9(string[] args)
+        public static void Main(string[] args)
         {
             var app = WebApplication.CreateBuilder(args).Build();
 
@@ -249,4 +249,3 @@ namespace HelloWorld_5
         }
     }
 }
-

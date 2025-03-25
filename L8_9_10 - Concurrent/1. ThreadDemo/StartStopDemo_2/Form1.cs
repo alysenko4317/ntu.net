@@ -2,7 +2,7 @@ using static System.Windows.Forms.AxHost;
 
 namespace StartStopDemo_2
 {
-    // idea demonstration but the design is bad
+    // idea demonstration but the DESIGN IS BAD
     // better design illustrated in StopPauseDemo_1 sample
 
     public partial class Form1 : Form

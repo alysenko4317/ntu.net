@@ -68,15 +68,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     // Create a thread to set the text of the window
     std::wstring text = L"Text from another thread!";
     std::thread setTextThread(SetWindowTextFromThread, text);
-    //setTextThread.join(); // Wait for the thread to finish
-
-                          // Enter the message loop
-    MSG msg;
+                          
+    MSG msg;  // Entering the message loop
     while (GetMessage(&msg, NULL, 0, 0))
     {
         TranslateMessage(&msg);
         DispatchMessage(&msg);
     }
+
+    setTextThread.join(); // Wait for the thread to finish
 
     return 0;
 }

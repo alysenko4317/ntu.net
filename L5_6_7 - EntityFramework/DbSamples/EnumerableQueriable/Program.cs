@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Collections;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Reflection.Emit;
 
@@ -36,17 +37,17 @@ public class ApplicationContext : DbContext
         {
             using (ApplicationContext db = new ApplicationContext())
             {
-                // При выполнении запроса IEnumerable загружает все данные, и если нам надо выполнить их фильтрацию,
-                // то сама фильтрация происходит на стороне клиента.
+                // При виконанні запиту IEnumerable завантажує всі дані, і якщо нам потрібно здійснити їх фільтрацію,
+                // то фільтрація відбувається на стороні клієнта.
                 //IEnumerable<User> userIEnum = db.Users;
 
-                // Объект IQueryable предоставляет удаленный доступ к базе данных и позволяет перемещаться по данным
-                // как в прямом порядке от начала до конца, так и в обратном порядке. В процессе создания запроса,
-                // возвращаемым объектом которого является IQueryable, происходит оптимизация запроса, непосредственная
-                // выборка данных происходит во время вызова .ToList(), фильтрация в этом случае происходит на стороне СУБД.
+                // Об’єкт IQueryable забезпечує віддалений доступ до бази даних та дозволяє переміщуватися по даних
+                // як у прямому порядку від початку до кінця, так і у зворотному порядку. Під час створення запиту,
+                // об’єктом, що повертається, є IQueryable, що дозволяє оптимізувати запит; безпосередній вибір даних
+                // відбувається під час виклику .ToList(), а фільтрація в цьому випадку здійснюється на стороні СУБД.
                 //
-                // IQueryable позволяет динамически создавать сложные запросы. Например, мы можем последовательно наслаивать
-                // в зависимости от условий выражения для фильтрации:
+                // IQueryable дозволяє динамічно створювати складні запити. Наприклад, можна послідовно наслаювати
+                // умови для фільтрації залежно від потреб:
                 //    IQueryable<User> userIQuer = db.Users;
                 //    userIQuer = userIQuer.Where(p => p.Id < 10);
                 //    userIQuer = userIQuer.Where(p => p.Name == "Tom");
@@ -54,7 +55,11 @@ public class ApplicationContext : DbContext
                 //
                 IQueryable<User> userIQuer = db.Users;
 
-                var users = userIQuer.Where(p => p.Id < 10).ToList();
+                var users = userIQuer.Where(p => p.Id < 10)
+                                              .ToList();
+
+              //  var users = (userIQuer as IEnumerable<User>).Where(p => p.Id < 10)
+              //                                                       .ToList();
 
                 foreach (var user in users)
                     Console.WriteLine(user.Name);
