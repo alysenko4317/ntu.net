@@ -1,0 +1,17 @@
+D:\_ntu\МОИ ПРЕДМЕТЫ\Стек технологій .NET\_git\L8_9_10 - Concurrent\1. ThreadDemo\Progress.3\obj\Debug\net8.0-windows\Progress.Form1.resources
+D:\_ntu\МОИ ПРЕДМЕТЫ\Стек технологій .NET\_git\L8_9_10 - Concurrent\1. ThreadDemo\Progress.3\obj\Debug\net8.0-windows\1.1_Progress_3.csproj.GenerateResource.cache
+D:\_ntu\МОИ ПРЕДМЕТЫ\Стек технологій .NET\_git\L8_9_10 - Concurrent\1. ThreadDemo\Progress.3\obj\Debug\net8.0-windows\1.1_Progress_3.GeneratedMSBuildEditorConfig.editorconfig
+D:\_ntu\МОИ ПРЕДМЕТЫ\Стек технологій .NET\_git\L8_9_10 - Concurrent\1. ThreadDemo\Progress.3\obj\Debug\net8.0-windows\1.1_Progress_3.AssemblyInfoInputs.cache
+D:\_ntu\МОИ ПРЕДМЕТЫ\Стек технологій .NET\_git\L8_9_10 - Concurrent\1. ThreadDemo\Progress.3\obj\Debug\net8.0-windows\1.1_Progress_3.AssemblyInfo.cs
+D:\_ntu\МОИ ПРЕДМЕТЫ\Стек технологій .NET\_git\L8_9_10 - Concurrent\1. ThreadDemo\Progress.3\obj\Debug\net8.0-windows\1.1_Progress_3.csproj.CoreCompileInputs.cache
+D:\_ntu\МОИ ПРЕДМЕТЫ\Стек технологій .NET\_git\L8_9_10 - Concurrent\1. ThreadDemo\Progress.3\obj\Debug\net8.0-windows\1.1_Progress_3.sourcelink.json
+D:\_ntu\МОИ ПРЕДМЕТЫ\Стек технологій .NET\_git\L8_9_10 - Concurrent\1. ThreadDemo\Progress.3\bin\Debug\net8.0-windows\1.1_Progress_3.exe
+D:\_ntu\МОИ ПРЕДМЕТЫ\Стек технологій .NET\_git\L8_9_10 - Concurrent\1. ThreadDemo\Progress.3\bin\Debug\net8.0-windows\1.1_Progress_3.deps.json
+D:\_ntu\МОИ ПРЕДМЕТЫ\Стек технологій .NET\_git\L8_9_10 - Concurrent\1. ThreadDemo\Progress.3\bin\Debug\net8.0-windows\1.1_Progress_3.runtimeconfig.json
+D:\_ntu\МОИ ПРЕДМЕТЫ\Стек технологій .NET\_git\L8_9_10 - Concurrent\1. ThreadDemo\Progress.3\bin\Debug\net8.0-windows\1.1_Progress_3.dll
+D:\_ntu\МОИ ПРЕДМЕТЫ\Стек технологій .NET\_git\L8_9_10 - Concurrent\1. ThreadDemo\Progress.3\bin\Debug\net8.0-windows\1.1_Progress_3.pdb
+D:\_ntu\МОИ ПРЕДМЕТЫ\Стек технологій .NET\_git\L8_9_10 - Concurrent\1. ThreadDemo\Progress.3\obj\Debug\net8.0-windows\1.1_Progress_3.dll
+D:\_ntu\МОИ ПРЕДМЕТЫ\Стек технологій .NET\_git\L8_9_10 - Concurrent\1. ThreadDemo\Progress.3\obj\Debug\net8.0-windows\refint\1.1_Progress_3.dll
+D:\_ntu\МОИ ПРЕДМЕТЫ\Стек технологій .NET\_git\L8_9_10 - Concurrent\1. ThreadDemo\Progress.3\obj\Debug\net8.0-windows\1.1_Progress_3.pdb
+D:\_ntu\МОИ ПРЕДМЕТЫ\Стек технологій .NET\_git\L8_9_10 - Concurrent\1. ThreadDemo\Progress.3\obj\Debug\net8.0-windows\1.1_Progress_3.genruntimeconfig.cache
+D:\_ntu\МОИ ПРЕДМЕТЫ\Стек технологій .NET\_git\L8_9_10 - Concurrent\1. ThreadDemo\Progress.3\obj\Debug\net8.0-windows\ref\1.1_Progress_3.dll

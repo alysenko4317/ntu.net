@@ -1,0 +1,1 @@
+docker build -f Dockerfile_opt -t dotnet_test_size_opt .

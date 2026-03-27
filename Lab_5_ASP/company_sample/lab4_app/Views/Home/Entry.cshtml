@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Empty</title>
+</head>
+<body>
+
+    <div>
+        <h4>Employee</h4>
+        <hr />
+        @using (Html.BeginForm())
+        {
+            @ViewBag.Greeting
+            <input name="name" type="text" required />
+            <input type="submit" value="Войти" />
+
+        }
+    </div>
+    <div>
+        <p>@Html.ActionLink("Создать работника", "Create")</p>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</body>
+</html>

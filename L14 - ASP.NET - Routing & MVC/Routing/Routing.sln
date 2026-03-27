@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0. RoutingDemo", "Routing\0. RoutingDemo.csproj", "{37E5CACB-A459-4154-BDD2-2C7596A774BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. RouteConstraint", "RouteConstraint\1. RouteConstraint.csproj", "{345B79BB-12BF-4496-90F4-D076D467F297}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. RoutingAndMiddleware", "RoutingAndMiddleware\2. RoutingAndMiddleware.csproj", "{6508582D-7FAB-4103-B3CD-B58E0CCD027F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. WebAPI_Demo", "WebAPI_Demo\3. WebAPI_Demo.csproj", "{3643373B-08CF-4B71-A801-711B36D26E9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4. Logging_Demo", "Logging_Demo\4. Logging_Demo.csproj", "{4F4FB0C2-3037-494D-9A35-052BAC9FC6C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5. LoggerProvider", "LoggerProvider\5. LoggerProvider.csproj", "{BD12EB53-AB8C-4D3B-8D03-BB063CEB7D36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IResult_Demo", "IResult_Demo\IResult_Demo.csproj", "{72806A3D-EB09-40C0-B3F0-7DF707036F65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37E5CACB-A459-4154-BDD2-2C7596A774BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37E5CACB-A459-4154-BDD2-2C7596A774BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37E5CACB-A459-4154-BDD2-2C7596A774BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37E5CACB-A459-4154-BDD2-2C7596A774BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{345B79BB-12BF-4496-90F4-D076D467F297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{345B79BB-12BF-4496-90F4-D076D467F297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{345B79BB-12BF-4496-90F4-D076D467F297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{345B79BB-12BF-4496-90F4-D076D467F297}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6508582D-7FAB-4103-B3CD-B58E0CCD027F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6508582D-7FAB-4103-B3CD-B58E0CCD027F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6508582D-7FAB-4103-B3CD-B58E0CCD027F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6508582D-7FAB-4103-B3CD-B58E0CCD027F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3643373B-08CF-4B71-A801-711B36D26E9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3643373B-08CF-4B71-A801-711B36D26E9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3643373B-08CF-4B71-A801-711B36D26E9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3643373B-08CF-4B71-A801-711B36D26E9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F4FB0C2-3037-494D-9A35-052BAC9FC6C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F4FB0C2-3037-494D-9A35-052BAC9FC6C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F4FB0C2-3037-494D-9A35-052BAC9FC6C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F4FB0C2-3037-494D-9A35-052BAC9FC6C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD12EB53-AB8C-4D3B-8D03-BB063CEB7D36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD12EB53-AB8C-4D3B-8D03-BB063CEB7D36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD12EB53-AB8C-4D3B-8D03-BB063CEB7D36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD12EB53-AB8C-4D3B-8D03-BB063CEB7D36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72806A3D-EB09-40C0-B3F0-7DF707036F65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72806A3D-EB09-40C0-B3F0-7DF707036F65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72806A3D-EB09-40C0-B3F0-7DF707036F65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72806A3D-EB09-40C0-B3F0-7DF707036F65}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D6F351B2-B5CC-463D-A71A-87A5E7B6A5EC}
+	EndGlobalSection
+EndGlobal

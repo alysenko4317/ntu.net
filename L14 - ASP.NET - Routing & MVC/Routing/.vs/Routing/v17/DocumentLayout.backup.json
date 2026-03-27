@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L14 - ASP.NET - Routing \u0026 MVC\\Routing\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{72806A3D-EB09-40C0-B3F0-7DF707036F65}|IResult_Demo\\IResult_Demo.csproj|d:\\_ntu\\\u043C\u043E\u0438 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B\\\u0441\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .net\\_git\\l14 - asp.net - routing \u0026 mvc\\routing\\iresult_demo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72806A3D-EB09-40C0-B3F0-7DF707036F65}|IResult_Demo\\IResult_Demo.csproj|solutionrelative:iresult_demo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3643373B-08CF-4B71-A801-711B36D26E9A}|WebAPI_Demo\\3. WebAPI_Demo.csproj|d:\\_ntu\\\u043C\u043E\u0438 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B\\\u0441\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .net\\_git\\l14 - asp.net - routing \u0026 mvc\\routing\\webapi_demo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3643373B-08CF-4B71-A801-711B36D26E9A}|WebAPI_Demo\\3. WebAPI_Demo.csproj|solutionrelative:webapi_demo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L14 - ASP.NET - Routing \u0026 MVC\\Routing\\IResult_Demo\\Program.cs",
+              "RelativeDocumentMoniker": "IResult_Demo\\Program.cs",
+              "ToolTip": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L14 - ASP.NET - Routing \u0026 MVC\\Routing\\IResult_Demo\\Program.cs",
+              "RelativeToolTip": "IResult_Demo\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T10:24:36.938Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L14 - ASP.NET - Routing \u0026 MVC\\Routing\\WebAPI_Demo\\Program.cs",
+              "RelativeDocumentMoniker": "WebAPI_Demo\\Program.cs",
+              "ToolTip": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L14 - ASP.NET - Routing \u0026 MVC\\Routing\\WebAPI_Demo\\Program.cs",
+              "RelativeToolTip": "WebAPI_Demo\\Program.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T10:21:53.617Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+﻿
+<div class="text-center">
+    <h2 class="text-muted">Мои записи</h2>
+</div>
+
+@foreach (var p in Model)
+{
+    @p.Title <!-- заголовок записи -->
+    @p.Category.Title<br><!-- доступ к Foreign Key -->
+    @p.Content
+    <br><a href="/blog/modify?id=@p.Id">modify</a>
+}

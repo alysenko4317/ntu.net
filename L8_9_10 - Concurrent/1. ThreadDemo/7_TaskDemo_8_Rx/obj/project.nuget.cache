@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "o7QWPJooOYM=",
+  "success": true,
+  "projectFilePath": "D:\\_ntu\\МОИ ПРЕДМЕТЫ\\Стек технологій .NET\\_git\\L8_9_10 - Concurrent\\1. ThreadDemo\\7_TaskDemo_8_Rx\\7_TaskDemo_8_Reactive.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kasya\\.nuget\\packages\\system.reactive\\6.0.1\\system.reactive.6.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

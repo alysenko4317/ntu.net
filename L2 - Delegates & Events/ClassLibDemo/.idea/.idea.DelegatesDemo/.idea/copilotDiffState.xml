@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/AGENTS.md">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/AGENTS.md" />
+              <option name="updatedContent" value="# AGENTS.md&#10;&#10;## Scope and intent&#10;- This solution is a delegates/events teaching demo with three projects: a reusable solver library, a console consumer, and a WinForms consumer.&#10;- Keep changes small and explicit; code is intentionally simple for learning event flow.&#10;&#10;## Architecture map&#10;- `MathSolverClassLibrary/MathSolver.cs` is the core boundary.&#10;- `MathSolverClassLibrary.MathSolver` owns configuration (`_xmin`, `_xmax`, `_step`) and exposes `Solve(Func&lt;double,double&gt; fn)`.&#10;- `Solve` triggers events in strict order: `InitializeEvent` -&gt; `ProcessingStartedEvent` -&gt; numeric loop -&gt; `ProcessingFinishedEvent`.&#10;- `MathSolverConsole/Program.cs` demonstrates lightweight subscription with lambdas and writes event data to stdout.&#10;- `EventsFormsApp/Program.cs` demonstrates UI-oriented consumption: event callbacks append HTML fragments, then an `IMessageSender` renders with `WebBrowser` in a modal form.&#10;&#10;## Data and control flow details&#10;- Computation is a simple accumulation loop (`for (double x = _xmin; x &lt;= _xmax; x += _step)`), so floating-point endpoint behavior is intentional and visible.&#10;- Event payload types are custom `EventArgs` classes in the same file: `MathSolverInitializeEventArgs`, `MathSolverProcessingFinishedEventArgs`.&#10;- There is no async/threading layer; all callbacks run synchronously in the caller thread.&#10;&#10;## Project references and integration points&#10;- `MathSolverConsole/MathSolverConsole.csproj` -&gt; references `MathSolverClassLibrary`.&#10;- `EventsFormsApp/EventsFormsApp.csproj` -&gt; references `MathSolverClassLibrary` and uses Windows Forms (`&lt;UseWindowsForms&gt;true&lt;/UseWindowsForms&gt;`).&#10;- No external NuGet packages are used; only .NET SDK and framework libraries.&#10;&#10;## Local workflow (verified)&#10;- Build full solution: `dotnet build DelegatesDemo.sln`.&#10;- Run console demo: `dotnet run --project MathSolverConsole/MathSolverConsole.csproj`.&#10;- Run WinForms demo (Windows only): `dotnet run --project EventsFormsApp/EventsFormsApp.csproj`.&#10;- Current TFMs are `net7.0` and `net7.0-windows`; SDK 9 emits `NETSDK1138` end-of-support warnings during build/run.&#10;&#10;## Conventions specific to this repo&#10;- Keep event names and sequencing consistent with existing API (`InitializeEvent`, `ProcessingStartedEvent`, `ProcessingFinishedEvent`).&#10;- Existing public event-arg properties are lowercase (`xmin`, `xmax`, `step`, `result`); preserve for compatibility unless intentionally refactoring all consumers.&#10;- Use lambda subscriptions in app entry points as shown in both `Program.cs` files.&#10;- Favor direct file-local demo types in `EventsFormsApp/Program.cs` (e.g., `IMessage`, `HtmlMessage`, `IMessageSender`) rather than introducing extra layers.&#10;&#10;## AI-instruction sources discovered&#10;- Searched for `AGENTS.md`, `AGENT.md`, `CLAUDE.md`, Copilot/Cursor/Windsurf/Cline rules, and `README.md`; none were present before this file.&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

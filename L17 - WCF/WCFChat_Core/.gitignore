@@ -1,0 +1,7 @@
+.vs
+HostApp/bin
+HostApp/obj
+ClientUI/bin
+ClientUI/obj
+ChatLibrary/obj
+ChatLibrary/bin

@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Modify Record";
+}
+<form method="post">
+    <label>Category:</label><br />
+    <input type="text" name="category" value="@Model.Category.Title" readonly/><br /><br />
+    <label>Post:</label><br />
+    <textarea type="text" name="post" cols="100" rows="5">@Model.Content</textarea> <br /><br />
+    <input type="submit" value="Сохранить" />
+</form>

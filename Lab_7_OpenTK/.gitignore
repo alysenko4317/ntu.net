@@ -1,0 +1,7 @@
+.vs
+GLGraph/bin
+GLGraph/obj
+GLGraph/*.user
+GLMinApp/bin
+GLMinApp/obj
+GLMinApp/*.user

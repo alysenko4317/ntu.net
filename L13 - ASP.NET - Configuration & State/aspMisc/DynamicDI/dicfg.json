@@ -1,0 +1,4 @@
+{
+  "ServiceImplementation": "MyApp.Services+ServiceA, DynamicDI"
+}
+

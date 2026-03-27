@@ -1,0 +1,53 @@
+﻿@model webblog.ViewModels.PostViewModel
+
+@{
+    var formTitle = Model.Id == Guid.Empty ? "Create Post" : "Edit Post";
+    var formAction = Model.Id == Guid.Empty ? "Create" : "Edit";
+    ViewData["Title"] = formTitle;
+}
+
+<div class="container mt-4">
+    <h2 class="text-center">@formTitle</h2>
+
+    @using (Html.BeginForm(formAction, "Blog", FormMethod.Post, new { @class = "needs-validation", novalidate = "novalidate" }))
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @if (Model.Id != Guid.Empty)
+        {
+            @Html.HiddenFor(m => m.Id)
+        }
+
+        <div class="form-group">
+            <label asp-for="Title">Title:</label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="PublishDate">Publish Date:</label>
+            <input asp-for="PublishDate" type="date" class="form-control" />
+            <span asp-validation-for="PublishDate" class="text-danger"></span>
+        </div>
+
+        <div class="form-check">
+            <input asp-for="IsDraft" class="form-check-input" />
+            <label asp-for="IsDraft" class="form-check-label text-info">Is Draft</label>
+            <span asp-validation-for="IsDraft" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Content">Content:</label>
+            <textarea asp-for="Content" class="form-control"></textarea>
+            <span asp-validation-for="Content" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CategoryId">Category:</label>
+            <select asp-for="CategoryId" asp-items="Model.Categories" class="form-control"></select>
+            <span asp-validation-for="CategoryId" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">@formTitle</button>
+    }
+</div>

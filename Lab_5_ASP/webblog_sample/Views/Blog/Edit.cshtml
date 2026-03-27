@@ -1,0 +1,26 @@
+﻿@model webblog.ViewModels.PostViewModel
+
+@{
+    ViewData["Title"] = "Edit Post";
+}
+
+<h2>Edit Post</h2>
+
+@using (Html.BeginForm("Edit", "Blog", FormMethod.Post))
+{
+    @Html.ValidationSummary()
+    @Html.HiddenFor(model => model.Id)
+
+    <p><label asp-for="Title">Title:</label>
+       <input asp-for="Title" /></p>
+    <p><label asp-for="PublishDate">Publish Date:</label>
+       <input asp-for="PublishDate" /></p>
+    <p><label asp-for="IsDraft">Is Draft:</label>
+       <input asp-for="IsDraft" /></p>
+    <p><label asp-for="Content">Content:</label>
+       <textarea asp-for="Content"></textarea></p>
+    <p><label asp-for="CategoryId">Category:</label>
+        <select asp-for="CategoryId" asp-items="Model.Categories"></select></p>
+
+    <input type="submit" value="Save Changes" />
+}

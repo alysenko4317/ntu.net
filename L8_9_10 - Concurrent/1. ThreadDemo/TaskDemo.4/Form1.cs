@@ -1,0 +1,141 @@
+namespace TaskDemo
+{
+    public partial class Form1 : Form
+    {
+        private Worker? _worker;
+        private TaskScheduler _scheduler;
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            _scheduler = TaskScheduler.FromCurrentSynchronizationContext();
+
+            Action action = () =>
+            {
+                while (true)
+                {
+                    if (this.IsDisposed || label1.IsDisposed)
+                        break;
+
+                    Invoke((Action)(() => label1.Text = DateTime.Now.ToLongTimeString()));
+
+                    Thread.Sleep(1000);
+                }
+            };
+
+            //   Task task = new Task(action);
+            //   task.Start();
+
+            Task task = Task.Factory.StartNew(action);
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            if (_worker != null)
+            {
+                MessageBox.Show("Worker is already running!");
+                return;
+            }
+
+            _worker = new Worker();
+            // _worker.WorkCompleted += _worker_WorkCompleted;
+            _worker.ProcessChanged += worker_ProcessChanged;
+
+            button1.Enabled = false;
+
+
+            var task = Task<bool>.Factory.StartNew(_worker.Work);
+
+            task.ContinueWith((t, o) =>
+            {
+                string message = t.Result ? "Процесс отменен" : "Процесс завершен!";
+                MessageBox.Show(message);
+                button1.Enabled = true;
+            }, null, _scheduler);
+
+
+            //   bool cancelled = await Task<bool>.Factory.StartNew(_worker.Work);
+
+            //   string message = cancelled ? "Процесс отменен" : "Процесс завершен!";
+            //   MessageBox.Show(message);
+            //   button1.Enabled = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (_worker != null)
+                _worker.Cancel();
+        }
+
+
+
+        //   private void _worker_WorkCompleted(bool cancelled)
+        //   {
+        /*    this.InvokeEx(() =>
+            {
+                string message = cancelled ? "Процесс отменен" : "Процесс завершен!";
+                MessageBox.Show(message);
+                button1.Enabled = true;
+            });*/
+        //  }
+
+        private void worker_ProcessChanged(int progress)
+        {
+            this.InvokeEx(() => {
+                progressBar.Value = progress + (progress < 100 ? 1 : 0);
+                progressBar.Value = progress + 1;
+            });
+        }
+    }
+
+    // ------------------------------------------------------------------
+    // Worker
+    // ------------------------------------------------------------------
+
+    public class Worker
+    {
+        private bool _cancelled = false;
+
+        public void Cancel()
+        {
+            _cancelled = true;
+        }
+
+        public bool Work()
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                if (_cancelled)
+                    break;
+
+                Thread.Sleep(50);
+                ProcessChanged(i);
+            }
+
+            return _cancelled;
+        }
+
+        public event Action<int> ProcessChanged;
+    }
+
+    // ------------------------------------------------------------------
+
+    public static class ControlHelper
+    {
+        public static void InvokeEx(this Control control, Action action)
+        {
+            if (control.InvokeRequired)
+            {
+                control.Invoke(action);
+            }
+            else
+            {
+                action();
+            }
+        }
+    }
+}

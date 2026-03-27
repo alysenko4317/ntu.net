@@ -1,0 +1,139 @@
+7.6.2 Приклад подання із викликом контролера ASP.NET Web API @{
+ViewBag.Title = "Графіки";
+//інтервал оновлення - 3 с
+int refreshInterval = 3000;
+string refreshIntervalStr = refreshInterval.ToString();
+//uri для виклику Web API контролера
+string uri = @"/api/serverrandom"; }
+
+<h2>Графіки</h2>
+<div class="panel panel-primary">
+    <div class="panel-heading">Графік за 10 останніми точками</div>
+    <div class="panel-body">
+        <div id="div_graph_current" style="width:100%; height:333px;"></div>
+    </div>
+</div>
+
+<div class="panel panel-primary">
+<div class="panel-heading">Графік за всіма точками</div>
+<div class="panel-body">
+<div id="div_graph_total" style="width:100%; height:333px;"></div>
+</div>
+</div>
+<div class="panel panel-primary">
+<div class="panel-heading">Графік за всіма точками з прокруткою</div>
+<div class="panel-body">
+<div id="div_graph_total_roll" style="width:100%; height:333px;"></div>
+</div>
+</div>
+@section Scripts { @Scripts.Render("~/bundles/dygraph")
+<script type="text/javascript">
+
+// Перетворення дати-часу в тип Date з рядка
+function ParseDateTime(dt)
+{
+    var year = dt.substring(0, 4);
+    var month = dt.substring(5, 7);
+    var day = dt.substring(8, 10);
+    var hour = dt.substring(11, 13);
+    var mnt = dt.substring(14, 16);
+    var sec = dt.substring(17, 19);
+    var Result = new Date(year, month-1, day, hour, mnt, sec, 0);
+    return Result;
+}
+
+// Ознака первинного заповнення масиву з накопиченням
+var firstTotalFlag = false;
+
+// Дані з накопиченням
+var dataTotal = [];
+
+// Поточні дані
+var dataCurrent = [];
+
+// Графіки
+var g_current = new Dygraph(document.getElementById("div_graph_current"), dataCurrent,
+{
+    drawPoints: true,
+    valueRange: [0, 102],
+    labels: ['Час', 'Значення'], 'Значення': { fillGraph: true }
+});
+
+var g_total = new Dygraph(document.getElementById("div_graph_total"), dataTotal,
+{
+    drawPoints: true,
+    valueRange: [0, 102],
+    labels: ['Час', 'Значення'], 'Значення': { fillGraph: true }
+});
+
+var g_total_roll = new Dygraph(document.getElementById("div_graph_total_roll"), dataTotal,
+{
+    drawPoints: true,
+    valueRange: [0, 102],
+    labels: ['Час', 'Значення'], 'Значення': { fillGraph: true }, colors: ['#3333FF'],
+    showRangeSelector: true
+});
+
+// URL для доступу до Web API контролера
+var FullUri = "http://" + window.location.host + '@uri';
+
+// Функція setIntervalGraph викликається після завантаження сторінки
+$(document).bind("ready", setIntervalGraph);
+
+function setIntervalGraph()
+{
+    // Функція RefreshProgress викликається через заданий інтервал часу
+    RefreshGraph(); setTimeout(setIntervalGraph, @refreshIntervalStr );
+}
+
+function RefreshGraph()
+{
+    // Надсилання Ajax-запиту про стан індикатора прогресу
+    $.ajax({
+        url: FullUri,
+	  
+        // Функція викликається після отримання відповіді на запит
+        success: function (data) {
+            // data - масив даних, отриманий із сервера
+
+            // Очищення масиву поточних даних
+            dataCurrent.length = 0;
+		  
+            // Заповнення масиву поточних даних
+            for (var i = 0; i < data.length; i++)
+            {
+                var element = data[i];
+                var x = ParseDateTime(element.x);
+                var y = element.y;
+                dataCurrent.push([x, y]);
+            }
+	  
+            if (! firstTotalFlag)
+            {
+                 // Під час першого отримання даних у масив з накопиченням додаються всі дані
+                 dataTotal.length = 0;
+                 for (var i = 0; i < data.length; i++)
+                 {
+                      var element = data[i];
+                      var x = ParseDateTime(element.x);
+                      var y = element.y;
+                      dataTotal.push([x, y]);
+                 }
+                 firstTotalFlag = true;
+            }
+            else
+            {
+                 // Додавання останнього елемента в масив з накопиченням
+                 var lastElement = data[data.length - 1];
+                 var x = ParseDateTime(lastElement.x);
+                 var y = lastElement.y;
+                 dataTotal.push([x, y]);
+            }
+		  
+            // Оновлення графіків під час зміни масивів даних
+            g_current.updateOptions({ 'file': dataCurrent });
+            g_total.updateOptions({ 'file': dataTotal });
+            g_total_roll.updateOptions({ 'file': dataTotal });
+        }
+    });
+}

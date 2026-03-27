@@ -1,0 +1,1 @@
+docker build -t dotnet_test_size .

@@ -1,0 +1,7 @@
+Now listening on: https://localhost:7123
+Now listening on: http://localhost:5253
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Path: /  Time:11:03:02 PM
+Content root path: D:\dev\_ntu\__net_stack\_git\L14 - ASP.NET - Routing & MVC\Routing\LoggerProvider
+Path: /favicon.ico  Time:11:03:02 PM

@@ -1,0 +1,30 @@
+﻿@model webblog.ViewModels.PostViewModel
+
+@{
+    ViewData["Title"] = "Create Post";
+}
+
+<h2>Create Post</h2>
+
+@using (Html.BeginForm("Create", "Blog", FormMethod.Post))
+{
+    @Html.ValidationSummary()
+
+    <p><label asp-for="Title">Title:</label>
+       <input asp-for="Title" />
+       <!-- <span asp-validation-for="Title" class="text-danger"></span> --></p>
+    <p><label asp-for="PublishDate">Publish Date:</label>
+       <input asp-for="PublishDate" />
+       <!-- <span asp-validation-for="PublishDate" class="text-danger"></span> --></p>
+    <p><label asp-for="IsDraft">Is Draft:</label>
+       <input asp-for="IsDraft" />
+       <!-- <span asp-validation-for="IsDraft" class="text-danger"></span> --></p>
+    <p><label asp-for="Content">Content:</label>
+       <textarea asp-for="Content"></textarea>
+       <!-- <span asp-validation-for="Content" class="text-danger"></span> --></p>
+    <p><label asp-for="CategoryId">Category:</label>
+       <select asp-for="CategoryId" asp-items="Model.Categories"></select>
+        <!-- <span asp-validation-for="Title" class="text-danger"></span> --></p>
+
+    <input type="submit" value="Create" />
+}

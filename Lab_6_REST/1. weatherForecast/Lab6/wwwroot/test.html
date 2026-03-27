@@ -1,0 +1,85 @@
+ <html><head>
+
+<script src="dygraph.min.js"></script>
+<script src="jquery-3.6.1.js"></script>
+
+<script>
+
+// create the Date typed value from string
+function parseDateTime(dt) {
+    var year = dt.substring(0, 4);
+    var month = dt.substring(5, 7);
+    var day = dt.substring(8, 10);
+    var hour = dt.substring(11, 13);
+    var mnt = dt.substring(14, 16);
+    var sec = dt.substring(17, 19);
+    var result = new Date(year, month - 1, day, hour, mnt, sec, 0);
+    return result;
+}
+
+$(document).ready(function() {
+
+    var data = [];  // data for displaying on the graph
+    var apiUrl = window.location.protocol + "//" + window.location.host + "/serverrandom";
+
+    // webapi url; it can be accessed just from browser
+    document.getElementById("demo").innerHTML = "Web API URL:" + apiUrl;
+
+    // this code is commented; it can be used for local debugging with
+    // random values instead of getting the data using the webapi
+    //
+    // var t = new Date();
+    // for (var i = 10; i >= 0; i--) {
+    //     var x = new Date(t.getTime() - i * 1000);
+    //     data.push([x, Math.random()]);
+    // }
+
+    var g = new Dygraph(document.getElementById("div_g"), data, {
+                            drawPoints: true,
+                            showRoller: true,
+                            valueRange: [0.0, 1.2],
+                            labels: ['Time', 'Random'] });
+						  
+    // It sucks that these things aren't objects, and we need to store state in window.
+
+    window.intervalId = setInterval(function() {
+
+        $.ajax({
+            url: apiUrl,
+            success: function (d) {
+                console.log(d);
+                
+                data = []
+                text = ''
+                for (var i = 0; i < d.length; i++) {
+                    var element = d[i];
+                    var x = parseDateTime(element.x);
+                    var y = parseFloat(element.y) / 100;
+                    data.push([x, y]);
+                    text += ' ' + y.toFixed(2)
+                }
+
+                console.log(text);
+            }
+        });
+
+        // this code is commented; it can be used for local debugging with
+        // random values instead of getting the data using the webapi
+        //
+        // var x = new Date();     // current time
+        // var y = Math.random();
+        // data.push([x, y]);
+        // console.log(x, y);
+
+        g.updateOptions({ 'file': data });
+
+    }, 1000);
+});
+
+</script></head>
+
+<body>
+    <p><div id='demo'></div></p>
+    <div id="div_g" style="width:600px; height:300px;"></div>
+    <p>New points should appear once per second.</p>
+</body>

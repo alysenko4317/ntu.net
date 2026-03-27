@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\ParamPass\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E3D0F651-EDDF-4310-BF82-FED9FF33F780}|cppDemo\\cppDemo.vcxproj|D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\ParamPass\\cppDemo\\cppDemo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E3D0F651-EDDF-4310-BF82-FED9FF33F780}|cppDemo\\cppDemo.vcxproj|solutionrelative:cppDemo\\cppDemo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01764B3D-E6DA-4A1C-87CE-FF5A1E35708E}|csDemo\\csDemo.csproj|d:\\_ntu\\\u043C\u043E\u0438 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B\\\u0441\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .net\\_git\\parampass\\csdemo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01764B3D-E6DA-4A1C-87CE-FF5A1E35708E}|csDemo\\csDemo.csproj|solutionrelative:csdemo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "cppDemo.cpp",
+              "DocumentMoniker": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\ParamPass\\cppDemo\\cppDemo.cpp",
+              "RelativeDocumentMoniker": "cppDemo\\cppDemo.cpp",
+              "ToolTip": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\ParamPass\\cppDemo\\cppDemo.cpp",
+              "RelativeToolTip": "cppDemo\\cppDemo.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-25T16:34:45.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\ParamPass\\csDemo\\Program.cs",
+              "RelativeDocumentMoniker": "csDemo\\Program.cs",
+              "ToolTip": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\ParamPass\\csDemo\\Program.cs",
+              "RelativeToolTip": "csDemo\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T16:34:07.193Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

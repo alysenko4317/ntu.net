@@ -1,0 +1,52 @@
+﻿@model IEnumerable<laba_3_1.Models.Employee>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department)
+            </th>
+            <th>
+                    @Html.DisplayNameFor(model => model.DepartmentId)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.DepartmentId)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+    @using (Html.BeginForm())
+    {
+        @ViewBag.Greeting
+        <select name="query" id="query">
+            <option value="Order_by_DepName">Відсортувати за департаментами</option>
+            <option value="ALL_A">Прізвища всіх співробітників починаються з А</option>
+            <option value="ANY_A">Saab</option>
+
+        </select>
+        <input type="submit" value="Застосувати" />
+
+    }
+

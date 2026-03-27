@@ -1,0 +1,1 @@
+docker build -f Dockerfile_alp -t dotnet_test_size_alp .

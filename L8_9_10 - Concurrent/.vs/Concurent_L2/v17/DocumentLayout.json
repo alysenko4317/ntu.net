@@ -1,0 +1,205 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D45B8657-E1D2-4EA0-A91E-E6564632505A}|1. ThreadDemo\\TaskDemo.9_Rx\\7_TaskDemo_9_Reactive.csproj|d:\\_ntu\\\u043C\u043E\u0438 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B\\\u0441\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .net\\_git\\l8_9_10 - concurrent\\1. threaddemo\\taskdemo.9_rx\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D45B8657-E1D2-4EA0-A91E-E6564632505A}|1. ThreadDemo\\TaskDemo.9_Rx\\7_TaskDemo_9_Reactive.csproj|solutionrelative:1. threaddemo\\taskdemo.9_rx\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D45B8657-E1D2-4EA0-A91E-E6564632505A}|1. ThreadDemo\\TaskDemo.9_Rx\\7_TaskDemo_9_Reactive.csproj|d:\\_ntu\\\u043C\u043E\u0438 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B\\\u0441\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .net\\_git\\l8_9_10 - concurrent\\1. threaddemo\\taskdemo.9_rx\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D45B8657-E1D2-4EA0-A91E-E6564632505A}|1. ThreadDemo\\TaskDemo.9_Rx\\7_TaskDemo_9_Reactive.csproj|solutionrelative:1. threaddemo\\taskdemo.9_rx\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8190CFBA-BD8B-4B8D-B60C-A5AC44DD3141}|1. ThreadDemo\\7_TaskDemo_8_Rx\\7_TaskDemo_8_Reactive.csproj|d:\\_ntu\\\u043C\u043E\u0438 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B\\\u0441\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .net\\_git\\l8_9_10 - concurrent\\1. threaddemo\\7_taskdemo_8_rx\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8190CFBA-BD8B-4B8D-B60C-A5AC44DD3141}|1. ThreadDemo\\7_TaskDemo_8_Rx\\7_TaskDemo_8_Reactive.csproj|solutionrelative:1. threaddemo\\7_taskdemo_8_rx\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00B1F95B-42C2-3E77-A771-2DC8A45BC1BC}|2. TaskDemo\\Paralell_5\\9 Parallel_AsParallelWithCancellation.csproj|d:\\_ntu\\\u043C\u043E\u0438 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B\\\u0441\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .net\\_git\\l8_9_10 - concurrent\\2. taskdemo\\paralell_5\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00B1F95B-42C2-3E77-A771-2DC8A45BC1BC}|2. TaskDemo\\Paralell_5\\9 Parallel_AsParallelWithCancellation.csproj|solutionrelative:2. taskdemo\\paralell_5\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24EE978-415B-503F-D165-1BF2426530E3}|2. TaskDemo\\Paralell_4\\9 Parallel_WithCancellationToken.csproj|d:\\_ntu\\\u043C\u043E\u0438 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B\\\u0441\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .net\\_git\\l8_9_10 - concurrent\\2. taskdemo\\paralell_4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24EE978-415B-503F-D165-1BF2426530E3}|2. TaskDemo\\Paralell_4\\9 Parallel_WithCancellationToken.csproj|solutionrelative:2. taskdemo\\paralell_4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E2BD2FA-7C20-09B3-21A4-1D8472BFBF7E}|2. TaskDemo\\Paralell_3\\9 Parallel_Parallel.csproj|d:\\_ntu\\\u043C\u043E\u0438 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B\\\u0441\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .net\\_git\\l8_9_10 - concurrent\\2. taskdemo\\paralell_3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E2BD2FA-7C20-09B3-21A4-1D8472BFBF7E}|2. TaskDemo\\Paralell_3\\9 Parallel_Parallel.csproj|solutionrelative:2. taskdemo\\paralell_3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B3E73BC-534D-E24B-AFA1-5FEBBD515C00}|2. TaskDemo\\Paralell_2\\9. Parallel_Async.csproj|d:\\_ntu\\\u043C\u043E\u0438 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B\\\u0441\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .net\\_git\\l8_9_10 - concurrent\\2. taskdemo\\paralell_2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B3E73BC-534D-E24B-AFA1-5FEBBD515C00}|2. TaskDemo\\Paralell_2\\9. Parallel_Async.csproj|solutionrelative:2. taskdemo\\paralell_2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52453803-4CC4-3B44-0751-8990CD5729BD}|2. TaskDemo\\Paralell_1\\9. Parallel_Sync.csproj|d:\\_ntu\\\u043C\u043E\u0438 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B\\\u0441\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .net\\_git\\l8_9_10 - concurrent\\2. taskdemo\\paralell_1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52453803-4CC4-3B44-0751-8990CD5729BD}|2. TaskDemo\\Paralell_1\\9. Parallel_Sync.csproj|solutionrelative:2. taskdemo\\paralell_1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{007BA278-54CD-47B0-9EC0-2275A6B6B5FE}|1. ThreadDemo\\TaskDemo.7\\7_TaskDemo_7_AggregateException.csproj|d:\\_ntu\\\u043C\u043E\u0438 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B\\\u0441\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .net\\_git\\l8_9_10 - concurrent\\1. threaddemo\\taskdemo.7\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{007BA278-54CD-47B0-9EC0-2275A6B6B5FE}|1. ThreadDemo\\TaskDemo.7\\7_TaskDemo_7_AggregateException.csproj|solutionrelative:1. threaddemo\\taskdemo.7\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{007BA278-54CD-47B0-9EC0-2275A6B6B5FE}|1. ThreadDemo\\TaskDemo.7\\7_TaskDemo_7_AggregateException.csproj|d:\\_ntu\\\u043C\u043E\u0438 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B\\\u0441\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .net\\_git\\l8_9_10 - concurrent\\1. threaddemo\\taskdemo.7\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{007BA278-54CD-47B0-9EC0-2275A6B6B5FE}|1. ThreadDemo\\TaskDemo.7\\7_TaskDemo_7_AggregateException.csproj|solutionrelative:1. threaddemo\\taskdemo.7\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{007BA278-54CD-47B0-9EC0-2275A6B6B5FE}|1. ThreadDemo\\TaskDemo.7\\7_TaskDemo_7_AggregateException.csproj|d:\\_ntu\\\u043C\u043E\u0438 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B\\\u0441\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .net\\_git\\l8_9_10 - concurrent\\1. threaddemo\\taskdemo.7\\workermultitask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{007BA278-54CD-47B0-9EC0-2275A6B6B5FE}|1. ThreadDemo\\TaskDemo.7\\7_TaskDemo_7_AggregateException.csproj|solutionrelative:1. threaddemo\\taskdemo.7\\workermultitask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\1. ThreadDemo\\TaskDemo.9_Rx\\Form1.cs",
+              "RelativeDocumentMoniker": "1. ThreadDemo\\TaskDemo.9_Rx\\Form1.cs",
+              "ToolTip": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\1. ThreadDemo\\TaskDemo.9_Rx\\Form1.cs",
+              "RelativeToolTip": "1. ThreadDemo\\TaskDemo.9_Rx\\Form1.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T09:00:02.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\1. ThreadDemo\\TaskDemo.9_Rx\\Form1.cs",
+              "RelativeDocumentMoniker": "1. ThreadDemo\\TaskDemo.9_Rx\\Form1.cs",
+              "ToolTip": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\1. ThreadDemo\\TaskDemo.9_Rx\\Form1.cs [Design]",
+              "RelativeToolTip": "1. ThreadDemo\\TaskDemo.9_Rx\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T08:59:57.52Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\1. ThreadDemo\\7_TaskDemo_8_Rx\\Program.cs",
+              "RelativeDocumentMoniker": "1. ThreadDemo\\7_TaskDemo_8_Rx\\Program.cs",
+              "ToolTip": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\1. ThreadDemo\\7_TaskDemo_8_Rx\\Program.cs",
+              "RelativeToolTip": "1. ThreadDemo\\7_TaskDemo_8_Rx\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T08:57:26.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\2. TaskDemo\\Paralell_5\\Program.cs",
+              "RelativeDocumentMoniker": "2. TaskDemo\\Paralell_5\\Program.cs",
+              "ToolTip": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\2. TaskDemo\\Paralell_5\\Program.cs",
+              "RelativeToolTip": "2. TaskDemo\\Paralell_5\\Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAADIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T08:56:05.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\2. TaskDemo\\Paralell_4\\Program.cs",
+              "RelativeDocumentMoniker": "2. TaskDemo\\Paralell_4\\Program.cs",
+              "ToolTip": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\2. TaskDemo\\Paralell_4\\Program.cs",
+              "RelativeToolTip": "2. TaskDemo\\Paralell_4\\Program.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T08:55:47.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\2. TaskDemo\\Paralell_3\\Program.cs",
+              "RelativeDocumentMoniker": "2. TaskDemo\\Paralell_3\\Program.cs",
+              "ToolTip": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\2. TaskDemo\\Paralell_3\\Program.cs",
+              "RelativeToolTip": "2. TaskDemo\\Paralell_3\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T08:48:27.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\2. TaskDemo\\Paralell_2\\Program.cs",
+              "RelativeDocumentMoniker": "2. TaskDemo\\Paralell_2\\Program.cs",
+              "ToolTip": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\2. TaskDemo\\Paralell_2\\Program.cs*",
+              "RelativeToolTip": "2. TaskDemo\\Paralell_2\\Program.cs*",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T08:47:55.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\2. TaskDemo\\Paralell_1\\Program.cs",
+              "RelativeDocumentMoniker": "2. TaskDemo\\Paralell_1\\Program.cs",
+              "ToolTip": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\2. TaskDemo\\Paralell_1\\Program.cs",
+              "RelativeToolTip": "2. TaskDemo\\Paralell_1\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T08:47:49.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "WorkerMultiTask.cs",
+              "DocumentMoniker": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\1. ThreadDemo\\TaskDemo.7\\WorkerMultiTask.cs",
+              "RelativeDocumentMoniker": "1. ThreadDemo\\TaskDemo.7\\WorkerMultiTask.cs",
+              "ToolTip": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\1. ThreadDemo\\TaskDemo.7\\WorkerMultiTask.cs",
+              "RelativeToolTip": "1. ThreadDemo\\TaskDemo.7\\WorkerMultiTask.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T08:41:26.143Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\1. ThreadDemo\\TaskDemo.7\\Form1.cs",
+              "RelativeDocumentMoniker": "1. ThreadDemo\\TaskDemo.7\\Form1.cs",
+              "ToolTip": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\1. ThreadDemo\\TaskDemo.7\\Form1.cs [Design]",
+              "RelativeToolTip": "1. ThreadDemo\\TaskDemo.7\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T08:40:29.39Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\1. ThreadDemo\\TaskDemo.7\\Form1.cs",
+              "RelativeDocumentMoniker": "1. ThreadDemo\\TaskDemo.7\\Form1.cs",
+              "ToolTip": "D:\\_ntu\\\u041C\u041E\u0418 \u041F\u0420\u0415\u0414\u041C\u0415\u0422\u042B\\\u0421\u0442\u0435\u043A \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0439 .NET\\_git\\L8_9_10 - Concurrent\\1. ThreadDemo\\TaskDemo.7\\Form1.cs",
+              "RelativeToolTip": "1. ThreadDemo\\TaskDemo.7\\Form1.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADwAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T08:39:40.64Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

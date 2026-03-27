@@ -1,0 +1,38 @@
+﻿@model IEnumerable<webblog.Models.Post>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog Posts</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-3">
+        <h2>Blog Posts</h2>
+        <div class="mb-2">
+            <a asp-action="Create" class="btn btn-primary">Create New Post</a>
+        </div>
+
+        @foreach (var post in Model)
+        {
+        <div class="card mb-3">
+            <div class="card-header">
+                <h3 class="card-title">@post.Title</h3>
+                <h6 class="card-subtitle mb-2 text-muted">Category: @post.Category?.Title</h6>
+            </div>
+            <div class="card-body">
+                <p class="card-text">@post.Content</p>
+                <p class="text-muted">Published on: @post.PublishDate.ToString("d")</p>
+                <a asp-action="Edit" asp-route-id="@post.Id" class="card-link">Edit</a>
+                <a asp-action="Delete" asp-route-id="@post.Id" class="card-link">Delete</a>
+            </div>
+        </div>
+        }
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

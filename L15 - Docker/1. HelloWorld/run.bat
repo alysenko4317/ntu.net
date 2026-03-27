@@ -1,0 +1,1 @@
+docker run dotnet_hello
