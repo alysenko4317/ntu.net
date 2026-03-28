@@ -1,0 +1,80 @@
+﻿<reactiveUi:ReactiveWindow
+    x:TypeArguments="viewModels:MainWindowViewModel"
+    x:Class="DeviceVisualizer.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
+    xmlns:reactiveUi="clr-namespace:ReactiveUI;assembly=ReactiveUI.Wpf"
+    xmlns:viewModels="clr-namespace:DeviceVisualizer.ViewModels"
+    mc:Ignorable="d"
+    Title="WPF Reactive Demo"
+    Height="700"
+    Width="1100">
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="ReactiveUI + WPF demo"
+                   FontSize="24"
+                   FontWeight="SemiBold"
+                   Margin="0,0,0,16" />
+
+        <Grid Grid.Row="1" Margin="0,0,0,16">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="TargetValueTextBox"
+                     Grid.Column="0"
+                     materialDesign:HintAssist.Hint="Target value" />
+
+            <Button x:Name="StartButton"
+                    Grid.Column="1"
+                    Margin="12,0,0,0"
+                    Content="Start" />
+
+            <Button x:Name="StopButton"
+                    Grid.Column="2"
+                    Margin="12,0,0,0"
+                    Content="Stop" />
+
+            <TextBlock x:Name="ValidationErrors"
+                       Grid.Column="3"
+                       Margin="12,0,0,0"
+                       VerticalAlignment="Center"
+                       Foreground="Red" />
+        </Grid>
+
+        <DataGrid x:Name="DeviceInfoGrid"
+                  Grid.Row="2"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  Margin="0,0,0,16">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Key" Binding="{Binding Key}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Value" Binding="{Binding Value}" IsReadOnly="True" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <lvc:CartesianChart x:Name="Plot"
+                            Grid.Row="3"
+                            Margin="0,0,0,16" />
+
+        <TextBlock x:Name="CurrentPressureText"
+                   Grid.Row="4"
+                   FontSize="18"
+                   FontWeight="Medium" />
+    </Grid>
+</reactiveUi:ReactiveWindow>

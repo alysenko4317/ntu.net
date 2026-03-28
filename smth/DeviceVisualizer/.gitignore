@@ -1,0 +1,6 @@
+.vs
+.idea
+DeviceVisualizer/bin
+DeviceVisualizer/obj
+DeviceVisualizer/*.log
+DeviceVisualizer/*.user
