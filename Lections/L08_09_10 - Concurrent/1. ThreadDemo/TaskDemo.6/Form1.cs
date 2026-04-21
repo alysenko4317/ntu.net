@@ -1,4 +1,4 @@
-namespace TaskDemo
+п»їnamespace TaskDemo
 {
     public partial class Form1 : Form
     {
@@ -50,7 +50,7 @@ namespace TaskDemo
             string message = "";
 
             try {
-                task = Task<bool>.Factory.StartNew(() => _worker.Work(token), token); // А що якщо не передати token другий раз?
+                task = Task<bool>.Factory.StartNew(() => _worker.Work(token), token); // Рђ С‰Рѕ СЏРєС‰Рѕ РЅРµ РїРµСЂРµРґР°С‚Рё token РґСЂСѓРіРёР№ СЂР°Р·?
                 /*    cancelled =*/
                 await task;
             }
@@ -59,11 +59,11 @@ namespace TaskDemo
             }
             catch (Exception ex) {
                 isError = true;
-                message = string.Format("Произошла ошибка: {0}", ex.Message);
+                message = string.Format("РџСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР°: {0}", ex.Message);
             }
 
             if (!isError) {
-                message = task.IsCanceled ? "Процесс отменен" : "Процесс завершен";
+                message = task.IsCanceled ? "РџСЂРѕС†РµСЃСЃ РѕС‚РјРµРЅРµРЅ" : "РџСЂРѕС†РµСЃСЃ Р·Р°РІРµСЂС€РµРЅ";
             }
 
             MessageBox.Show(message);

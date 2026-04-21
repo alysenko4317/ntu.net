@@ -1,4 +1,4 @@
-using MultiThreadTest;
+п»їusing MultiThreadTest;
 
 namespace TaskDemo
 {
@@ -54,16 +54,16 @@ namespace TaskDemo
             {
                 int result = await Task<int>.Factory.ContinueWhenAll(tasks.ToArray(), ts => ts.Sum(t => t.Result));
 
-                MessageBox.Show(string.Format("Процесс завершен. Результат: {0}", result));
+                MessageBox.Show(string.Format("РџСЂРѕС†РµСЃСЃ Р·Р°РІРµСЂС€РµРЅ. Р РµР·СѓР»СЊС‚Р°С‚: {0}", result));
             }
             catch (AggregateException ex)
             {
                 ex.Flatten().Handle(exc =>
                 {
-                    string message = exc is TaskCanceledException ? "Процесс отменен." : exc.Message;
+                    string message = exc is TaskCanceledException ? "РџСЂРѕС†РµСЃСЃ РѕС‚РјРµРЅРµРЅ." : exc.Message;
 
                     MessageBox.Show(message);
-                    return true;  // це говорить платформі що ми самі обробили виключення
+                    return true;  // С†Рµ РіРѕРІРѕСЂРёС‚СЊ РїР»Р°С‚С„РѕСЂРјС– С‰Рѕ РјРё СЃР°РјС– РѕР±СЂРѕР±РёР»Рё РІРёРєР»СЋС‡РµРЅРЅСЏ
                 });
             }
 

@@ -1,4 +1,4 @@
-namespace TaskDemo
+п»їnamespace TaskDemo
 {
     public partial class Form1 : Form
     {
@@ -65,10 +65,10 @@ namespace TaskDemo
                 task.Start();
 
          //   await Task.WhenAll(tasks);
-            Task.WaitAll(tasks.ToArray());  // а тут виникне deadlock
+            Task.WaitAll(tasks.ToArray());  // Р° С‚СѓС‚ РІРёРЅРёРєРЅРµ deadlock
 
             Invoke(new Action(() => {
-                textBox2.Text = "Всі потоки завершили роботу!}";
+                textBox2.Text = "Р’СЃС– РїРѕС‚РѕРєРё Р·Р°РІРµСЂС€РёР»Рё СЂРѕР±РѕС‚Сѓ!}";
             }));
         }
 
@@ -80,17 +80,17 @@ namespace TaskDemo
         {
             for (int i = 0; i < 5; i++)
             {
-                Console.WriteLine($"Потік {Thread.CurrentThread.ManagedThreadId}: ітерація {i + 1}");
-                Thread.Sleep(1000); // Симулюємо роботу
+                Console.WriteLine($"РџРѕС‚С–Рє {Thread.CurrentThread.ManagedThreadId}: С–С‚РµСЂР°С†С–СЏ {i + 1}");
+                Thread.Sleep(1000); // РЎРёРјСѓР»СЋС”РјРѕ СЂРѕР±РѕС‚Сѓ
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            // Створення масиву потоків
+            // РЎС‚РІРѕСЂРµРЅРЅСЏ РјР°СЃРёРІСѓ РїРѕС‚РѕРєС–РІ
             Thread[] threads = new Thread[3];
 
-            // Ініціалізація і запуск потоків
+            // Р†РЅС–С†С–Р°Р»С–Р·Р°С†С–СЏ С– Р·Р°РїСѓСЃРє РїРѕС‚РѕРєС–РІ
             threads[0] = new Thread(Work);
             threads[1] = new Thread(Work);
             threads[2] = new Thread(Work);
@@ -98,12 +98,12 @@ namespace TaskDemo
             foreach (var thread in threads)
                 thread.Start();
 
-            // Очікування завершення роботи всіх потоків
+            // РћС‡С–РєСѓРІР°РЅРЅСЏ Р·Р°РІРµСЂС€РµРЅРЅСЏ СЂРѕР±РѕС‚Рё РІСЃС–С… РїРѕС‚РѕРєС–РІ
             foreach (var thread in threads)
                 thread.Join();
 
             Invoke(new Action(() => {
-                textBox3.Text = "Всі потоки завершили роботу!}";
+                textBox3.Text = "Р’СЃС– РїРѕС‚РѕРєРё Р·Р°РІРµСЂС€РёР»Рё СЂРѕР±РѕС‚Сѓ!}";
             }));
         }
     }

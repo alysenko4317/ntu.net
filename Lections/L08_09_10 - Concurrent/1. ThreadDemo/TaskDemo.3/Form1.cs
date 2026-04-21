@@ -1,4 +1,4 @@
-namespace TaskDemo
+п»їnamespace TaskDemo
 {
     public partial class Form1 : Form
     {
@@ -32,7 +32,7 @@ namespace TaskDemo
 
             bool cancelled = await Task<bool>.Factory.StartNew(_worker.Work);
 
-            string message = cancelled ? "Процесс отменен" : "Процесс завершен!";
+            string message = cancelled ? "РџСЂРѕС†РµСЃСЃ РѕС‚РјРµРЅРµРЅ" : "РџСЂРѕС†РµСЃСЃ Р·Р°РІРµСЂС€РµРЅ!";
             MessageBox.Show(message);
             button1.Enabled = true;
         }
@@ -68,7 +68,7 @@ namespace TaskDemo
         {
          /*   this.InvokeEx(() =>
             {
-                string message = cancelled ? "Процесс отменен" : "Процесс завершен!";
+                string message = cancelled ? "РџСЂРѕС†РµСЃСЃ РѕС‚РјРµРЅРµРЅ" : "РџСЂРѕС†РµСЃСЃ Р·Р°РІРµСЂС€РµРЅ!";
                 MessageBox.Show(message);
                 button1.Enabled = true;
             });*/

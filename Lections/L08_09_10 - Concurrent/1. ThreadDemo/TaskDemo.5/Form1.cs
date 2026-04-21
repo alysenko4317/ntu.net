@@ -1,4 +1,4 @@
-namespace TaskDemo
+п»їnamespace TaskDemo
 {
     public partial class Form1 : Form
     {
@@ -56,12 +56,12 @@ namespace TaskDemo
             catch (Exception ex)
             {
                 isError = true;
-                message = string.Format("Произошла ошибка: {0}", ex.Message);
+                message = string.Format("РџСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР°: {0}", ex.Message);
             }
 
             if (!isError)
             {
-                message = cancelled ? "Процесс отменен" : "Процесс завершен";
+                message = cancelled ? "РџСЂРѕС†РµСЃСЃ РѕС‚РјРµРЅРµРЅ" : "РџСЂРѕС†РµСЃСЃ Р·Р°РІРµСЂС€РµРЅ";
             }
 
             MessageBox.Show(message);
@@ -104,7 +104,7 @@ namespace TaskDemo
                     break;
 
                 if (i == 50)
-                    throw new Exception("Щось пішло не так!");
+                    throw new Exception("Р©РѕСЃСЊ РїС–С€Р»Рѕ РЅРµ С‚Р°Рє!");
 
                 Thread.Sleep(50);
 

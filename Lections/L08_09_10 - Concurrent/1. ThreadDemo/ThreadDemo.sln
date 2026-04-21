@@ -23,11 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1_ThreadDemo_2", "ThreadDem
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1_ThreadDemo_3", "ThreadDemo.3\1_ThreadDemo_3.csproj", "{A554C7B1-D65D-43FF-8997-698E7F45D10A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1.1_Progress_1", "Progress.1\1.1_Progress_1.csproj", "{FC0775CC-8D56-441D-A802-02BA6BA75624}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1.1_Progress_1_UIResponsivenessProblem", "Progress.1\1.1_Progress_1_UIResponsivenessProblem.csproj", "{FC0775CC-8D56-441D-A802-02BA6BA75624}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1.1_Progress_2", "Progress.2\1.1_Progress_2.csproj", "{D9725446-83F0-4377-ACB5-80F3D4B097DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1.1_Progress_2_ThreadsIntro", "Progress.2\1.1_Progress_2_ThreadsIntro.csproj", "{D9725446-83F0-4377-ACB5-80F3D4B097DC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1.1_Progress_3", "Progress.3\1.1_Progress_3.csproj", "{6CAE71BE-B0E2-40EC-AC56-16887DAC3CCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1.1_Progress_3_SynchronizationContext", "Progress.3\1.1_Progress_3_SynchronizationContext.csproj", "{6CAE71BE-B0E2-40EC-AC56-16887DAC3CCB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "7_TaskDemo_2", "TaskDemo.2\7_TaskDemo_2.csproj", "{9DC4A304-1DAD-448A-9AA8-04686CCAC9BC}"
 EndProject
@@ -46,6 +46,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "7_TaskDemo_9_Rx", "TaskDemo.9_Rx\7_TaskDemo_9_Rx.csproj", "{D45B8657-E1D2-4EA0-A91E-E6564632505A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8_ThreadsPool_1", "ThreadsPool_1\8_ThreadsPool_1.csproj", "{4732C663-47B8-1586-57F9-41D39FD6D5B5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "5_BackgroundWorker_2", "BackgroundWorker.2\5_BackgroundWorker_2.csproj", "{D3C6B19A-FC99-418E-879D-162E9E60D34B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +143,10 @@ Global
 		{4732C663-47B8-1586-57F9-41D39FD6D5B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4732C663-47B8-1586-57F9-41D39FD6D5B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4732C663-47B8-1586-57F9-41D39FD6D5B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3C6B19A-FC99-418E-879D-162E9E60D34B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3C6B19A-FC99-418E-879D-162E9E60D34B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3C6B19A-FC99-418E-879D-162E9E60D34B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3C6B19A-FC99-418E-879D-162E9E60D34B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

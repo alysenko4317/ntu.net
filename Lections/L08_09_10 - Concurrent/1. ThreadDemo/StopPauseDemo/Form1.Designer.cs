@@ -28,72 +28,104 @@
         /// </summary>
         private void InitializeComponent()
         {
+            lblTitle = new Label();
+            lblSolution = new Label();
+            lblOptimization = new Label();
             btnStart = new Button();
             btnStop = new Button();
             btnPause = new Button();
+            btnOpenCalc = new Button();
             textBox1 = new TextBox();
-            button1 = new Button();
             SuspendLayout();
+            // 
+            // lblTitle
+            // 
+            lblTitle.AutoSize = false;
+            lblTitle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblTitle.Location = new Point(12, 12);
+            lblTitle.Size = new Size(776, 20);
+            lblTitle.Text = "3.3 — Start / Stop / Pause: ПРАВИЛЬНИЙ дизайн";
+            lblTitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblSolution
+            // 
+            lblSolution.AutoSize = false;
+            lblSolution.ForeColor = Color.DarkGreen;
+            lblSolution.Location = new Point(12, 40);
+            lblSolution.Size = new Size(776, 40);
+            lblSolution.Text =
+                "✔ Пауза через ManualResetEvent: Reset() → блокує потік, Set() → відновлює\n" +
+                "✔ volatile bool — зміна прапора скасування завжди видна між потоками   " +
+                "✔ IListener — повна ізоляція виконавця від UI";
+            // 
+            // lblOptimization
+            // 
+            lblOptimization.AutoSize = false;
+            lblOptimization.ForeColor = Color.DarkSlateBlue;
+            lblOptimization.Location = new Point(12, 85);
+            lblOptimization.Size = new Size(776, 40);
+            lblOptimization.Text =
+                "⚡ Виклик підпрограми (call/ret) ≈ 5–10 тактів; WaitOne()/Invoke() = системний виклик ≈ сотні–тисячі тактів → не викликати кожну ітерацію!\n" +
+                "   Фільтр: if (i % 65536==0) ← % = ділення ~25 тактів  |  if ((i & 0xFFFF)==0) ← & = 1 такт ✔  (працює лише для степеня двійки)";
             // 
             // btnStart
             // 
-            btnStart.Location = new Point(65, 51);
-            btnStart.Name = "btnStart";
-            btnStart.Size = new Size(75, 23);
-            btnStart.TabIndex = 0;
-            btnStart.Text = "Start";
-            btnStart.UseVisualStyleBackColor = true;
+            btnStart.Location = new Point(12, 138);
+            btnStart.Size = new Size(140, 36);
+            btnStart.Text = "▶  Start";
+            btnStart.BackColor = Color.Honeydew;
+            btnStart.UseVisualStyleBackColor = false;
             btnStart.Click += btnStart_Click;
             // 
             // btnStop
             // 
-            btnStop.Location = new Point(182, 51);
-            btnStop.Name = "btnStop";
-            btnStop.Size = new Size(75, 23);
-            btnStop.TabIndex = 1;
-            btnStop.Text = "Stop";
-            btnStop.UseVisualStyleBackColor = true;
+            btnStop.Location = new Point(162, 138);
+            btnStop.Size = new Size(140, 36);
+            btnStop.Text = "⏹  Stop";
+            btnStop.BackColor = Color.MistyRose;
+            btnStop.UseVisualStyleBackColor = false;
             btnStop.Click += btnStop_Click;
             // 
             // btnPause
             // 
-            btnPause.Location = new Point(295, 51);
-            btnPause.Name = "btnPause";
-            btnPause.Size = new Size(75, 23);
-            btnPause.TabIndex = 2;
-            btnPause.Text = "Pause";
-            btnPause.UseVisualStyleBackColor = true;
+            btnPause.Location = new Point(312, 138);
+            btnPause.Size = new Size(140, 36);
+            btnPause.Text = "⏸  Pause";
+            btnPause.BackColor = Color.LightYellow;
+            btnPause.UseVisualStyleBackColor = false;
             btnPause.Click += btnPause_Click;
+            // 
+            // btnOpenCalc
+            // 
+            btnOpenCalc.Location = new Point(600, 138);
+            btnOpenCalc.Size = new Size(188, 36);
+            btnOpenCalc.Text = "🖩  Відкрити Калькулятор";
+            btnOpenCalc.BackColor = Color.AliceBlue;
+            btnOpenCalc.UseVisualStyleBackColor = false;
+            btnOpenCalc.Click += btnOpenCalc_Click;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(65, 102);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(305, 23);
-            textBox1.TabIndex = 3;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(71, 162);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 4;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            textBox1.Location = new Point(12, 190);
+            textBox1.Size = new Size(776, 31);
+            textBox1.ReadOnly = true;
+            textBox1.Text = "Статус...";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
-            Controls.Add(btnPause);
-            Controls.Add(btnStop);
+            ClientSize = new Size(800, 243);
+            Controls.Add(lblTitle);
+            Controls.Add(lblSolution);
+            Controls.Add(lblOptimization);
             Controls.Add(btnStart);
+            Controls.Add(btnStop);
+            Controls.Add(btnPause);
+            Controls.Add(btnOpenCalc);
+            Controls.Add(textBox1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "3.3 — Start/Stop/Pause: Good Design";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -101,10 +133,13 @@
 
         #endregion
 
+        private Label lblTitle;
+        private Label lblSolution;
+        private Label lblOptimization;
         private Button btnStart;
         private Button btnStop;
         private Button btnPause;
+        private Button btnOpenCalc;
         private TextBox textBox1;
-        private Button button1;
     }
 }

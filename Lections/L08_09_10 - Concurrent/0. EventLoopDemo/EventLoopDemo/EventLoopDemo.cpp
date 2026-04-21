@@ -22,11 +22,13 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
         OutputDebugString(debugMessage);
         DestroyWindow(hwnd);
         break;
+
     case WM_DESTROY:
         swprintf_s(debugMessage, sizeof(debugMessage) / sizeof(debugMessage[0]), _T("Received WM_DESTROY message. hwnd: %p\n"), hwnd);
         OutputDebugString(debugMessage);
         PostQuitMessage(0);
         break;
+
     default:
         swprintf_s(debugMessage, sizeof(debugMessage) / sizeof(debugMessage[0]), _T("Received message: 0x%04X. hwnd: %p\n"), uMsg, hwnd);
         OutputDebugString(debugMessage);
@@ -64,6 +66,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     MSG msg;
     while (GetMessage(&msg, NULL, 0, 0))
     {
+
         TranslateMessage(&msg);
         DispatchMessage(&msg);
     }

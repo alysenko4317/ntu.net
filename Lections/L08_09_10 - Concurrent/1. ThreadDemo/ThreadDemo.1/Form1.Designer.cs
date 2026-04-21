@@ -28,61 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            lblTitle = new Label();
+            lblSample1 = new Label();
+            lblSample2 = new Label();
+            btnBlockingUI = new Button();
+            btnBackgroundNoResult = new Button();
             textBox1 = new TextBox();
-            button3 = new Button();
             SuspendLayout();
             // 
-            // button1
+            // lblTitle
             // 
-            button1.Location = new Point(90, 62);
-            button1.Margin = new Padding(4, 5, 4, 5);
-            button1.Name = "button1";
-            button1.Size = new Size(107, 38);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            lblTitle.AutoSize = false;
+            lblTitle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblTitle.Location = new Point(12, 12);
+            lblTitle.Size = new Size(776, 20);
+            lblTitle.Text = "2.1 — Перший потік: блокування UI та проблема повернення результату";
+            lblTitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblSample1
+            // 
+            lblSample1.AutoSize = false;
+            lblSample1.ForeColor = Color.DarkRed;
+            lblSample1.Location = new Point(12, 45);
+            lblSample1.Size = new Size(370, 40);
+            lblSample1.Text = "Зразок 1: довга операція в UI-потоці\nUI замерзає, textBox оновиться лише наприкінці";
+            // 
+            // lblSample2
+            // 
+            lblSample2.AutoSize = false;
+            lblSample2.ForeColor = Color.DarkBlue;
+            lblSample2.Location = new Point(400, 45);
+            lblSample2.Size = new Size(388, 40);
+            lblSample2.Text = "Зразок 2: фоновий потік — UI вільний\nАле як повернути результат? (дивись ThreadDemo.2)";
+            // 
+            // btnBlockingUI
+            // 
+            btnBlockingUI.Location = new Point(12, 100);
+            btnBlockingUI.Size = new Size(370, 40);
+            btnBlockingUI.Text = "▶  Запустити в UI-потоці (заморожує)";
+            btnBlockingUI.BackColor = Color.MistyRose;
+            btnBlockingUI.UseVisualStyleBackColor = false;
+            btnBlockingUI.Click += btnBlockingUI_Click;
+            // 
+            // btnBackgroundNoResult
+            // 
+            btnBackgroundNoResult.Location = new Point(400, 100);
+            btnBackgroundNoResult.Size = new Size(388, 40);
+            btnBackgroundNoResult.Text = "▶  Запустити у фоновому потоці (результат недоступний)";
+            btnBackgroundNoResult.BackColor = Color.AliceBlue;
+            btnBackgroundNoResult.UseVisualStyleBackColor = false;
+            btnBackgroundNoResult.Click += btnBackgroundNoResult_Click;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(90, 150);
-            textBox1.Margin = new Padding(4, 5, 4, 5);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(445, 31);
-            textBox1.TabIndex = 1;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(254, 62);
-            button3.Margin = new Padding(4, 5, 4, 5);
-            button3.Name = "button3";
-            button3.Size = new Size(107, 38);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            textBox1.Location = new Point(12, 158);
+            textBox1.Size = new Size(776, 31);
+            textBox1.ReadOnly = true;
+            textBox1.Text = "Результат з'явиться тут...";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1143, 750);
-            Controls.Add(button3);
+            ClientSize = new Size(800, 210);
+            Controls.Add(lblTitle);
+            Controls.Add(lblSample1);
+            Controls.Add(lblSample2);
+            Controls.Add(btnBlockingUI);
+            Controls.Add(btnBackgroundNoResult);
             Controls.Add(textBox1);
-            Controls.Add(button1);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "Form1";
-            Text = "Form1";
+            Text = "2.1 — UI Blocking & Background Thread";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
+        private Label lblTitle;
+        private Label lblSample1;
+        private Label lblSample2;
+        private Button btnBlockingUI;
+        private Button btnBackgroundNoResult;
         private TextBox textBox1;
-        private Button button2;
-        private Button button3;
     }
 }

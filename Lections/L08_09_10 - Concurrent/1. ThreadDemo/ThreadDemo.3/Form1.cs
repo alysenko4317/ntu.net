@@ -7,29 +7,49 @@ namespace OneThreadDemo
             InitializeComponent();
         }
 
-        // ------------- SAMPLE 4: passing parameter to a thread
-
-        private void button6_Click(object sender, EventArgs e)
+        // ── Зразок 5а: параметр через Thread.Start(object) ───────────────────
+        // Старий підхід: один параметр, обов'язковий cast
+        private void btnParameterizedThread_Click(object sender, EventArgs e)
         {
-            const long iterationsCount = 20000000;
+            const long iterationsCount = 20_000_000;
 
             Thread t = new Thread((parameterObject) =>
             {
+                // Параметр приходить як object — треба явно привести до типу
                 long iterations = Convert.ToInt64(parameterObject);
 
                 decimal res = 0;
                 for (long i = 0; i < iterations; i++)
                     res += (decimal)Math.Sin(i);
 
-                // Use Invoke to update the UI from the background thread
-                this.Invoke(new Action(() =>
-                {
-                    this.textBox1.Text = $"Thread Finished with res={res.ToString()}";
-                }));
+                // Замикання захоплює this → Invoke() доступний напряму
+                Invoke(() => textBox1.Text = $"[Start(param)] Результат: {res}");
             });
 
-            t.Start(iterationsCount); // passing the parameter 
-            textBox1.Text = "Calculation started in Background Thread...";
+            t.IsBackground = true;
+            t.Start(iterationsCount);  // ← передаємо параметр через Start()
+            textBox1.Text = "Обчислення запущено (параметр через Thread.Start)...";
+        }
+
+        // ── Зразок 5б: параметр через замикання — сучасний підхід ───────────
+        // Жодного object, жодного cast — повний type safety
+        private void btnClosureParameter_Click(object sender, EventArgs e)
+        {
+            const long iterationsCount = 20_000_000;
+
+            // iterationsCount захоплено замиканням — доступне прямо в лямбді
+            Thread t = new Thread(() =>
+            {
+                decimal res = 0;
+                for (long i = 0; i < iterationsCount; i++)  // ← звертаємось напряму
+                    res += (decimal)Math.Sin(i);
+
+                Invoke(() => textBox1.Text = $"[замикання] Результат: {res}");
+            });
+
+            t.IsBackground = true;
+            t.Start();  // ← параметрів не потрібно, все є у замиканні
+            textBox1.Text = "Обчислення запущено (параметр через замикання)...";
         }
     }
 }

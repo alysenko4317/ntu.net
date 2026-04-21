@@ -28,32 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            lblTitle = new Label();
+            lblDescription = new Label();
+            btnStart = new Button();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
-            // button1
+            // lblTitle
             // 
-            button1.Location = new Point(106, 65);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            lblTitle.AutoSize = false;
+            lblTitle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblTitle.Location = new Point(12, 12);
+            lblTitle.Size = new Size(776, 20);
+            lblTitle.Text = "3.1 — Інкапсуляція керування потоком у класі BackgroundExecutor";
+            lblTitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblDescription
+            // 
+            lblDescription.AutoSize = false;
+            lblDescription.ForeColor = Color.DarkSlateGray;
+            lblDescription.Location = new Point(12, 42);
+            lblDescription.Size = new Size(776, 50);
+            lblDescription.Text = "✔ Логіка виконання відокремлена від Form у клас BackgroundExecutor\n" +
+                                  "⚠ Проблеми: IsBackground не встановлено, немає зупинки, немає зворотного зв'язку\n" +
+                                  "→ Рішення у наступних проектах (StartStopDemo_2, StopPauseDemo)";
+            // 
+            // btnStart
+            // 
+            btnStart.Location = new Point(12, 105);
+            btnStart.Size = new Size(370, 40);
+            btnStart.Text = "▶  Запустити BackgroundExecutor";
+            btnStart.BackColor = Color.AliceBlue;
+            btnStart.UseVisualStyleBackColor = false;
+            btnStart.Click += btnStart_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(12, 160);
+            textBox1.Size = new Size(776, 31);
+            textBox1.ReadOnly = true;
+            textBox1.Text = "Статус...";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            ClientSize = new Size(800, 215);
+            Controls.Add(lblTitle);
+            Controls.Add(lblDescription);
+            Controls.Add(btnStart);
+            Controls.Add(textBox1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "3.1 — BackgroundExecutor Encapsulation";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
+        private Label lblTitle;
+        private Label lblDescription;
+        private Button btnStart;
+        private TextBox textBox1;
     }
 }
